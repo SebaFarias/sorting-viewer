@@ -1,5 +1,20 @@
-Complete list : https://www.geeksforgeeks.org/sorting-algorithms/
+# ToDo
+[ ] Controls
+ - [ ] Play
+ - [ ] More / Less bars
+ - [ ] Sorting speed
+ - [ ] Sorting Algorithm
+
+[ ] Algorithms
+- [ ] Choose wich ones  
+- [ ] Implement thoose  
+
+# Input: Range
+Styling basics: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+Styling tool: http://danielstern.ca/range.css/#/
+Huge Styled collection: https://codepen.io/collection/DgYaMj/?cursor=ZD0xJm89MSZwPTEmdj04
 # Sorting Algorithms
+Complete list : https://www.geeksforgeeks.org/sorting-algorithms/
 * Selection Sort
 * Bubble Sort
 * Recursive Bubble Sort
