@@ -9,6 +9,20 @@
 - [ ] Choose wich ones  
 - [ ] Implement thoose  
 
+### N^2
+Bubble Sort
+Selecction Sort 
+Insertion Sort
+### N Log(N)
+Merge Sort
+QuickSort
+Heapsort
+### Hybrids
+Timsort
+Introsort
+
+
+
 # Input: Range
 Styling basics: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
 Styling tool: http://danielstern.ca/range.css/#/
