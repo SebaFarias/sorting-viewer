@@ -1,9 +1,9 @@
 import React from 'react'
-import '../styles/bars.css'
+import './bars.css'
 
 const Bars = () => {
   return(
-    <main>
+    <main className="bars">
     </main>
   )
 }

@@ -1,13 +1,13 @@
 import React, {useState ,useCallback} from 'react'
-import LanguageContext , { ENGLISH , ESPANOL , Language } from '../language'
-import Header from './Header'
-import Bars from './Bars'
-import Controls from './Controls'
-import '../styles/layout.css'
+import LanguageContext , { ENGLISH , ESPANOL , Language } from '../../language'
+import Header from '../Header/Header'
+import Bars from '../Bars/Bars'
+import Controls from '../Controls/Controls'
+import './layout.css'
 const Layout = () => {
 
   const [ english, setEnglish ] = useState(Language.getLanguage)
-  const lenguage = english ? ENGLISH : ESPANOL
+  const language = english ? ENGLISH : ESPANOL
 
   const toggleLanguage = useCallback( () => {
     setEnglish( prevState => {
@@ -18,8 +18,8 @@ const Layout = () => {
   },[english])
 
   return(
-    <LanguageContext.Provider>
-      <Header/>
+    <LanguageContext.Provider value={language}>
+      <Header toggleLng={toggleLanguage} state={english}/>
       <Bars/>
       <Controls/>
     </LanguageContext.Provider>

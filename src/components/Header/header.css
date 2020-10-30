@@ -1,0 +1,20 @@
+header{
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.8rem;
+}
+.toggler-container{
+  margin-left: auto;
+}
+h1,h2{
+  margin: 0.3em;
+  text-align: center;
+}
+h1{
+  font-size: calc(1.5vw + 26.37px);
+}
+h2{
+  font-size: calc(0.56vw + 15.89px);
+  font-weight: 400;
+
+}
