@@ -7,12 +7,20 @@ const ENGLISH = {
     algo: {
       0: 'Algorithm 1',
     },
+    run:{
+      true: 'Pause',
+      false: 'Run'
+    },
 };
 const ESPANOL = {  
   title: 'Algoritmos de Orden',
   subtitle: 'Algoritmo escogido: ',
   algo: {
     0: 'Algoritmo 1',
+  },
+  run:{
+    true: 'Pausar',
+    false: 'Ordenar'
   },
 };
 
