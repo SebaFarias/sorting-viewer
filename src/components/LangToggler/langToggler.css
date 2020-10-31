@@ -1,23 +1,40 @@
 .toggler-container{
   width: min(max(3rem,10vw),5rem);
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+}
+.toggler-container:hover{
+  transform: scale(1.2,1.2);
 }
 .indicator{
+  position: relative;
   width: 100%;
   height: 0.5rem;
-  transition: all 2000ms ease-in-out;
+  overflow: hidden;
   border: none;
+  background: transparent;
 }
+.indicator::after{
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%);
+  transition: all 200ms ease-in-out;
+}
+.indicator.en::after{
+  left:-100%;
+}
+
 .labels{
   display: flex;
 }
 h4{
   margin-top: 0; 
   margin-bottom: 0; 
-  background-color: white;
-  color: transparent;  
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
+  transition: color 200ms ease-in-out; 
 }
 h4:first-child{
 margin-right: auto;

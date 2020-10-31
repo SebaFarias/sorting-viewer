@@ -1,0 +1,14 @@
+.left-controls{
+  width: 530px;
+  height: 202px;  
+  background: linear-gradient(180deg, #C4C4C4 0%, #837F7F 100%);
+  box-shadow: -8px 8px 8px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 101px;
+}
+.right-controls{
+  width: 530px;
+  height: 202px;  
+  background: linear-gradient(180deg, #C4C4C4 0%, #837F7F 100%);
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 101px;
+}
