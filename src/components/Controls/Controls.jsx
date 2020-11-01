@@ -5,7 +5,7 @@ import RunBtn from '../RunBtn/RunBtn'
 import RangeSelector from '../RangeSelector/RangeSelector'
 import AlgoSelector from '../AlgoSelector/AlgoSelector'
 
-const Controls = ({run, size, speed, toggleRun, sizeRange, speedRange}) => {
+const Controls = ({run, size, speed, algo, toggleRun, sizeRange, speedRange, setAlgo}) => {
   return(
     <section>
       <article className="left-controls">
@@ -14,7 +14,7 @@ const Controls = ({run, size, speed, toggleRun, sizeRange, speedRange}) => {
       </article>
       <article className="right-controls">
         <RangeSelector control='speed' state={speed} setter={speedRange}/>
-        <AlgoSelector/>
+        <AlgoSelector algo={algo} setAlgo={setAlgo}/>
       </article>
     </section>
   )

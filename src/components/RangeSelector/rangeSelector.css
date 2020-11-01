@@ -1,0 +1,24 @@
+.size-icon,
+.speed-icon,
+.size-icon::before{
+  width: 8vmin;
+  margin: auto;
+}
+.size-icon,
+.size-icon::before{
+  height: 3vmin;
+  background: linear-gradient(90deg, #EFA923 0%, #EBD33D 100%);
+}
+.size-icon{
+  clip-path: polygon(0% 20%, 70% 20%, 70% 0%, 100% 50%, 70% 100%, 70% 80%, 0% 80%);
+  transform: translate(0,-50%);
+}
+.size-icon::before{
+  content: '';
+  clip-path: polygon(0% 50%, 30% 0%, 30% 20%, 100% 20%, 100% 80%, 30% 80%, 30% 100%);
+  transform: translate(0,150%);
+}
+.speed-icon{
+  height: 8vmin;
+  background: linear-gradient(180deg, #82B53E 0%, #A9D154 100%);
+}

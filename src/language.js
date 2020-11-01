@@ -4,24 +4,32 @@ const LANGUAGE_KEY = 'ENGLISH';
 const ENGLISH = { 
     title: 'Sorting Algorithms',
     subtitle: 'Coosen algorithm: ',
-    algo: {
+    algorithms: {
       0: 'Algorithm 1',
+      1: 'Algorithm 2',
     },
     run:{
       true: 'Pause',
       false: 'Run'
     },
-};
-const ESPANOL = {  
-  title: 'Algoritmos de Orden',
-  subtitle: 'Algoritmo escogido: ',
-  algo: {
-    0: 'Algoritmo 1',
-  },
-  run:{
-    true: 'Pausar',
-    false: 'Ordenar'
-  },
+    size: 'Size',
+    speed: 'Speed',
+    algo: 'Algorithm',
+  };
+  const ESPANOL = {  
+    title: 'Algoritmos de Orden',
+    subtitle: 'Algoritmo escogido: ',
+    algorithms: {
+      0: 'Algoritmo 1',
+      1: 'Algoritmo 2',
+    },
+    run:{
+      true: 'Pausar',
+      false: 'Ordenar'
+    },
+    size: 'Cantidad',
+    speed: 'Velocidad',
+    algo: 'Algoritmo',
 };
 
 const Language = {

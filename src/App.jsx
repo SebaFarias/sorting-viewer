@@ -6,12 +6,14 @@ import Controls from './components/Controls/Controls'
 import './style.css'
 
 const App = () => {
+
   const [ english, setEnglish ] = useState(Language.getLanguage)
   const [running, setRunnung] = useState(false)
   const [size, setSize] = useState(50)
-  const [speed, setSpeed] = useState(50)
+  const [speed, setSpeed] = useState(200)
+  const [algorithm, setAlgorithm] = useState(1)
   const language = english ? ENGLISH : ESPANOL
-
+  
   const toggleLanguage = useCallback( () => {
     setEnglish( prevState => {
       const newState = !prevState
@@ -29,18 +31,32 @@ const App = () => {
   const speedRange = newSpeed => {
     setSpeed(newSpeed)
   }
+  const setAlgo = newAlgorithm => {
+    setAlgorithm(newAlgorithm)
+  }
 
   return(
     <LanguageContext.Provider value={language}>
-      <Header toggleLng={toggleLanguage} eng={english}/>
-      <Bars/>
+      <Header 
+        algo={algorithm}
+        eng={english} 
+        toggleLng={toggleLanguage} 
+      />
+      <Bars
+        run={running} 
+        size={size}
+        speed={speed}
+        algo={algorithm}
+      />
       <Controls 
         run={running} 
-        toggleRun={toggleRunning}
         size={size}
-        sizeRange={sizeRange}
         speed={speed}
+        algo={algorithm}
+        toggleRun={toggleRunning}
+        sizeRange={sizeRange}
         speedRange={speedRange}
+        setAlgo={setAlgo}
       />
     </LanguageContext.Provider>
   )
