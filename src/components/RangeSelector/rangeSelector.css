@@ -1,24 +1,16 @@
 .size-icon,
-.speed-icon,
-.size-icon::before{
+.speed-icon{
   width: 8vmin;
+  height: 8vmin;
   margin: auto;
 }
-.size-icon,
-.size-icon::before{
-  height: 3vmin;
-  background: linear-gradient(90deg, #EFA923 0%, #EBD33D 100%);
-}
 .size-icon{
-  clip-path: polygon(0% 20%, 70% 20%, 70% 0%, 100% 50%, 70% 100%, 70% 80%, 0% 80%);
-  transform: translate(0,-50%);
-}
-.size-icon::before{
-  content: '';
-  clip-path: polygon(0% 50%, 30% 0%, 30% 20%, 100% 20%, 100% 80%, 30% 80%, 30% 100%);
-  transform: translate(0,150%);
+  background: linear-gradient(90deg, #EFA923 0%, #EBD33D 100%);
+  clip-path: polygon(70% 13%, 70% 0%, 100% 25%, 70% 50%, 70% 37%, 0% 37%, 0% 75%, 30% 50%, 30% 63%, 100% 63%, 100% 87%, 30% 87%, 30% 100%, 0% 75%, 0% 13% );  
+  /*clip-path: polygon(0% 50%, 30% 0%, 30% 20%, 100% 20%, 100% 80%, 30% 80%, 30% 100%); */
 }
 .speed-icon{
-  height: 8vmin;
   background: linear-gradient(180deg, #82B53E 0%, #A9D154 100%);
+  clip-path: url('#speed');
+  /* <path d="M140 70C140 39.5 116 -3.95115e-05 70 0C24 -3.95115e-05 0 39.5 0 70H24.5C24.5 55.5 32.5 24 70 24C107.5 24 115.5 55.5 115.5 70H140Z" fill="url(#paint0_linear)"/> */
 }

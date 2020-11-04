@@ -1,20 +1,13 @@
 .run-icon,.pause-icon,.pause-icon::before{
   height: 8vmin;
+  width: 8vmin;
   margin: auto;
   background: linear-gradient(180deg, #AE2045 0%, #E65969 74%);
+  transition: all 200ms ease;
 }
 .run-icon{
-  width: 6vmin;
-  clip-path: polygon(0 0, 100% 50%, 0% 100%);
-  transform: translate(10%,0);
+  clip-path: polygon(20% 0, 100% 50%, 20% 100%);
 }
 .pause-icon{
-  width: 2vmin;
-  transform: translate(60%,0);
-}
-.pause-icon::before{
-  content: '';
-  display: block;
-  width: 2vmin;
-  transform: translate(-160%,0);
+    clip-path: polygon(10% 0%, 40% 0%, 40% 100%, 60% 100%, 60% 0%, 90% 0%, 90% 100%, 10% 100%)
 }
