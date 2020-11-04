@@ -9,7 +9,7 @@ const App = () => {
 
   const [ english, setEnglish ] = useState(Language.getLanguage)
   const [running, setRunnung] = useState(false)
-  const [size, setSize] = useState(50)
+  const [size, setSize] = useState(70)
   const [speed, setSpeed] = useState(200)
   const [algorithm, setAlgorithm] = useState(1)
   const language = english ? ENGLISH : ESPANOL
