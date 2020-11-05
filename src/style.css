@@ -5,7 +5,7 @@ body{
   padding: 0;
   color: rgb(230, 230, 250);
   min-height: 100vh;
-  background: linear-gradient(90deg, #3B4964 0%, #252B3B 100%);
+  background: #252B3B url('../assets/background-noise.png');
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   display: flex;

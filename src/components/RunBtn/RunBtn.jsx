@@ -9,7 +9,7 @@ const lang = useContext(LanguageContext)
     <div className= 'control'>
       <label className='label' htmlFor='runBtn'>{ run? lang.run.true : lang.run.false}</label>
       <button id='runBtn' className='run btn' name='run button' aria-checked={run} onClick={toggleRun}>
-        <div className={run?'pause-icon':'run-icon'}></div>
+        <div className={`run-button ${run?'pause-icon':'run-icon'}`}></div>
       </button>
     </div>
   )

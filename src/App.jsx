@@ -5,12 +5,15 @@ import Bars from './components/Bars/Bars'
 import Controls from './components/Controls/Controls'
 import './style.css'
 
+const INITIAL_SIZE = 7     
+const INITIAL_SPEED = 50  //In milliseconds
+
 const App = () => {
 
   const [ english, setEnglish ] = useState(Language.getLanguage)
   const [running, setRunnung] = useState(false)
-  const [size, setSize] = useState(70)
-  const [speed, setSpeed] = useState(200)
+  const [size, setSize] = useState(INITIAL_SIZE)
+  const [speed, setSpeed] = useState(INITIAL_SPEED)
   const [algorithm, setAlgorithm] = useState(1)
   const language = english ? ENGLISH : ESPANOL
   
