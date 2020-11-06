@@ -35,18 +35,24 @@ const Bars = ({run, size, speed, algo}) => {
         newMinIndex = j
       }
       //next indexes
-      if(newJ + 1 == n){
+      if(newJ + 1 >= n){
         const temp = newArray[newMinIndex][0]
         newArray[newMinIndex] = [newArray[i][0],'new']
         newArray[i] = [temp,'sorted']
         newI++
         newMinIndex = newI
-        newArray[newI][1] = 'selected'
+        if(newI < n){
+          newArray[newI][1] = 'selected'
+        }else{
+          newArray[newI-1][1] = 'sorted'
+        }
         newJ = newI + 1
       }else{
         newJ++
       }
-      if(newI + 1 == n)newJ = newI  
+      if(newI + 1 >= n){
+         newJ = newI  
+      }
     setBars({ 
         array: newArray,
         minIndex: newMinIndex,
