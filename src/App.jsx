@@ -14,7 +14,7 @@ const App = () => {
   const [running, setRunnung] = useState(false)
   const [size, setSize] = useState(INITIAL_SIZE)
   const [speed, setSpeed] = useState(INITIAL_SPEED)
-  const [algorithm, setAlgorithm] = useState(1)
+  const [algorithm, setAlgorithm] = useState('selectionSort')
   const language = english ? ENGLISH : ESPANOL
   
   const toggleLanguage = useCallback( () => {

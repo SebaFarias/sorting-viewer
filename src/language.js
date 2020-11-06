@@ -5,7 +5,7 @@ const ENGLISH = {
     title: 'Sorting Algorithms',
     subtitle: 'Coosen algorithm: ',
     algorithms: {
-      0: 'Algorithm 1',
+      selectionSort: 'Selection sort',
       1: 'Algorithm 2',
     },
     run:{
@@ -20,7 +20,7 @@ const ENGLISH = {
     title: 'Algoritmos de Orden',
     subtitle: 'Algoritmo escogido: ',
     algorithms: {
-      0: 'Algoritmo 1',
+      selectionSort: 'Orden por Selección',
       1: 'Algoritmo 2',
     },
     run:{
