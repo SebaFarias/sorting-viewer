@@ -6,7 +6,7 @@ const ENGLISH = {
     subtitle: 'Coosen algorithm: ',
     algorithms: {
       selectionSort: 'Selection sort',
-      1: 'Algorithm 2',
+      bubbleSort: 'Bubble sort',
     },
     run:{
       true: 'Pause',
@@ -21,7 +21,7 @@ const ENGLISH = {
     subtitle: 'Algoritmo escogido: ',
     algorithms: {
       selectionSort: 'Orden por Selección',
-      1: 'Algoritmo 2',
+      bubbleSort: 'Orden de Burbuja',
     },
     run:{
       true: 'Pausar',
