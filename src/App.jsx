@@ -5,8 +5,8 @@ import Bars from './components/Bars/Bars'
 import Controls from './components/Controls/Controls'
 import './style.css'
 
-const INITIAL_SIZE = 5     
-const INITIAL_SPEED = 200  //In milliseconds
+const INITIAL_SIZE = 8   
+const INITIAL_SPEED = 80  //In milliseconds
 
 const App = () => {
 

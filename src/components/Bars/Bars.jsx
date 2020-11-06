@@ -95,7 +95,7 @@ const Bars = ({run, size, speed, algo}) => {
   return(
     <main className="bars">
        {bars.array.map( bar => {
-        return <Bar key={bar[0]} situation={bar[1]} height={bar[0]} radius={window.innerWidth/(4*size)}/>
+        return <Bar key={bar[0]} situation={bar[1]} height={bar[0]} size={size}/>
       })}
     </main>
   )

@@ -2,7 +2,7 @@
 
 body{
   margin: 0;
-  padding: 0;
+  padding: 0em calc(8.214vw - 14.8px);
   color: rgb(230, 230, 250);
   min-height: 100vh;
   background: #252B3B url('../assets/background-noise.png');
