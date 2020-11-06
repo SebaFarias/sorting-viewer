@@ -3,11 +3,12 @@
   width: 8vmin;
   margin: auto;
   background: linear-gradient(180deg, #AE2045 0%, #E65969 74%);
-  transition: clip-path 200ms ease;
+  transition: all 200ms ease;
 }
 .run-icon{
-  clip-path: polygon(20% 0, 20% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 20% 100%); 
+  clip-path: polygon(20% 0, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 20% 100%);
 }
 .pause-icon{
-  clip-path: polygon(10% 0%, 40% 0%, 40% 100%, 60% 100%, 60% 0%, 90% 0%, 90% 100%, 10% 100%)
+  clip-path: polygon(0% 10%, 100% 10%, 100% 40%, 0% 40%, 0% 60%, 100% 60%, 100% 90%, 0% 90%);
+  transform: rotate(-90deg);
 }
