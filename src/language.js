@@ -7,6 +7,7 @@ const ENGLISH = {
     algorithms: {
       selectionSort: 'Selection sort',
       bubbleSort: 'Bubble sort',
+      insertionSort: 'Insertion sort',
     },
     run:{
       true: 'Pause',
@@ -20,8 +21,9 @@ const ENGLISH = {
     title: 'Algoritmos de Orden',
     subtitle: 'Algoritmo escogido: ',
     algorithms: {
-      selectionSort: 'Orden por Selección',
-      bubbleSort: 'Orden de Burbuja',
+      selectionSort: 'Orden por selección',
+      bubbleSort: 'Orden de burbuja',
+      insertionSort: 'Orden por inserción',
     },
     run:{
       true: 'Pausar',

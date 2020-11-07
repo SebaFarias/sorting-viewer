@@ -5,8 +5,8 @@ import Bars from './components/Bars/Bars'
 import Controls from './components/Controls/Controls'
 import './style.css'
 
-const INITIAL_SIZE = 30   
-const INITIAL_SPEED = 80  //In milliseconds
+const INITIAL_SIZE = 50 
+const INITIAL_SPEED = 50  //In milliseconds
 
 const App = () => {
 
@@ -14,7 +14,7 @@ const App = () => {
   const [running, setRunnung] = useState(false)
   const [size, setSize] = useState(INITIAL_SIZE)
   const [speed, setSpeed] = useState(INITIAL_SPEED)
-  const [algorithm, setAlgorithm] = useState('selectionSort')
+  const [algorithm, setAlgorithm] = useState('insertionSort')
   const language = english ? ENGLISH : ESPANOL
   
   const toggleLanguage = useCallback( () => {

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Bar from '../Bar/Bar'
-import Algorithm from '../../algorithm'
+import Algorithm from '../../hooks/algorithm'
 import './bars.css'
 
 const Bars = ({run, size, speed, algo}) => { 
@@ -11,8 +11,8 @@ const Bars = ({run, size, speed, algo}) => {
 
   return(
     <main className="bars">
-       {bars.array.map( bar => {
-        return <Bar key={bar[0]} situation={bar[1]} height={bar[0]} size={size}/>
+      {bars.array.map( bar => {
+        return <Bar key={bar.hash} situation={bar.state} height={bar.heigth} size={size}/>
       })}
     </main>
   )

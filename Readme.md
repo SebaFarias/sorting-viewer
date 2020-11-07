@@ -10,16 +10,16 @@
 - [ ] Implement thoose  
 
 ### N^2
-Bubble Sort
-Selecction Sort 
-Insertion Sort
+- [X] Bubble Sort
+- [X] Selecction Sort 
+- [ ] Insertion Sort
 ### N Log(N)
-Merge Sort
-QuickSort
-Heapsort
+- [ ] Merge Sort
+- [ ] QuickSort
+- [ ] Heapsort
 ### Hybrids
-Timsort
-Introsort
+- [ ] Timsort
+- [ ] Introsort
 
 
 
