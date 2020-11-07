@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 
 body{
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  background: #252B3B url('../assets/background-noise.png');
+}
+
+#root{
   padding: 0em calc(8.214vw - 14.8px);
   color: rgb(230, 230, 250);
   min-height: 100vh;
-  background: #252B3B url('../assets/background-noise.png');
-  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;

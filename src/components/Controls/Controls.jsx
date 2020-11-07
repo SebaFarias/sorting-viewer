@@ -10,11 +10,11 @@ const Controls = ({run, size, speed, algo, toggleRun, sizeRange, speedRange, set
     <section>
       <article className="left-controls">
         <RunBtn run={run} toggleRun={toggleRun}/>
-        <RangeSelector control='size' state={size} setter={sizeRange}/>
+        <AlgoSelector algo={algo} setAlgo={setAlgo}/>
       </article>
       <article className="right-controls">
+        <RangeSelector control='size' state={size} setter={sizeRange}/>
         <RangeSelector control='speed' state={speed} setter={speedRange}/>
-        <AlgoSelector algo={algo} setAlgo={setAlgo}/>
       </article>
     </section>
   )

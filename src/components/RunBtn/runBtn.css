@@ -1,6 +1,6 @@
 .run-button{
-  height: 8vmin;
-  width: 8vmin;
+  height: 6.8vmin;
+  width: 6.8vmin;
   margin: auto;
   background: linear-gradient(180deg, #AE2045 0%, #E65969 74%);
   transition: all 200ms ease;

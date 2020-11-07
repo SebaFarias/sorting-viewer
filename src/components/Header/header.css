@@ -3,6 +3,7 @@ header{
   flex-direction: column;
   padding: 0 0.8rem;
   margin-bottom: auto;
+  min-height: 20vh;
 }
 .toggler-container{
   margin-left: auto;

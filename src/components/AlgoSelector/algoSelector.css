@@ -1,8 +1,8 @@
 .algo-icon{
-  height: 6vmin;
-  width: 8vmin;
+  height: 6.8vmin;
+  width: 6.8vmin;
   margin: auto;
-  clip-path: polygon(0 0, 100% 0%, 50% 100%);
+  clip-path: polygon(0 10%, 100% 10%, 50% 90%);
   transform: translate(0,10%);
   background: linear-gradient(180deg, #1F928B 0%, #3BD5CD 74%);
 }

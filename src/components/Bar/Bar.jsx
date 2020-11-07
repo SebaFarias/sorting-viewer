@@ -8,7 +8,8 @@ const Bar = ({situation, size, height}) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setRadius(window.innerWidth / 4 * size)
+      const barWidth = Math.min(( 0.83572 * window.innerWidth - 14.8)/ size , 80)
+      setRadius(barWidth / 2.5)
     }
     window.addEventListener("resize", handleResize);
     handleResize();

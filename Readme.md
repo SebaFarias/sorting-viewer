@@ -12,7 +12,7 @@
 ### N^2
 - [X] Bubble Sort
 - [X] Selecction Sort 
-- [ ] Insertion Sort
+- [X] Insertion Sort
 ### N Log(N)
 - [ ] Merge Sort
 - [ ] QuickSort

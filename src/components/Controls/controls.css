@@ -2,10 +2,13 @@ section{
   display: flex;
   align-items: center;
   margin-top: auto;
+  height: 20vh;
 }
 .left-controls,.right-controls{
-  width: min(45vw,500px);
-  height: 20vmin;  
+  width: min(40vw,500px);
+  height: 15vmin;  
+  padding: 0.25em;
+  padding-right: 0.5em;
   background: linear-gradient(180deg, #C4C4C4 0%, #837F7F 100%);
   border-radius: 101px;
   display: flex;
@@ -23,14 +26,15 @@ section{
 }
 .control{
   position: relative;
-  width: 20vmin;
-  padding: 0.25em;
+  display: flex;
+  width: calc(15vmin - 0.5em);
   transition: all 200ms cubic-bezier(1, -1, 0, 2);
 }
 .btn{
-  width: calc(20vmin - 0.5em);
-  height: calc(20vmin - 0.5em);
+  width: calc(15vmin - 0.5em);
+  height: calc(15vmin - 0.5em);
   padding: 0;
+  margin: auto;
   border-radius: 50%;
   background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #8F8F8F 100%);
   display: flex;
@@ -40,10 +44,11 @@ section{
 }
 .label{
   position: absolute;
-  width: 100%;
+  width: 200%;
+  font-size: calc(0.59113300492611vw + 10.783251231527px);
   text-align: center;
   font-weight: 900;
   text-transform: uppercase;
   top:-1.5em;
-  left: 0;
+  left: -50%;
 }
