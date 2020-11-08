@@ -1,20 +1,8 @@
-const insert = (array, insertion, element) => {
-  if(insertion < 0) return array
-  const newArray = [...array]
-  const temp = newArray[element].heigth
-  for (let index = element - 1; index >= insertion; index--) {
-    newArray[index + 1].heigth = newArray[index].heigth
-    newArray[index + 1].state = 'selected'    
-  }
-  newArray[insertion].heigth = temp
-  newArray[insertion].state = 'inspecting'
-  return newArray
-}
-
 const insertionSort = {
-  initial: (size, generate) => {
+  initial: generated => {
     return {
-      array: generate(size),
+      algo: 'insertionSort',
+      array: generated,
       insertion: -1,
       i: 1,
       j: 0,
@@ -27,33 +15,22 @@ const insertionSort = {
       let newI = i
       let newJ = j
       if( newI == newArray.length){
-        for( let index = 0 ; index < newArray.length ; index++ ){
-          newArray[index].state = 'sorted'
-        }
-        return setBars({ array: newArray })
-      } 
-      if(newJ >= 0 && newArray[newJ].heigth > newArray[newI].heigth){
-        newInsertion = newJ
-        for( let index = 0 ; index < newArray.length ; index++ ){
-          newArray[index].state = 'new'
-          if( index == newI) newArray[index].state = 'inspecting'
-          if( index < newI) newArray[index].state = 'selected'
-          if( index < newInsertion || index < newJ) newArray[index].state = 'sorted'
-        }
-        newJ--
-      }else{
-        newArray = insert(newArray, newInsertion, newI)
-        for( let index = 0 ; index < newArray.length ; index++ ){
-          newArray[index].state = 'new'
-          if( index <= newI) newArray[index].state = 'selected'
-          if( index == newInsertion || (newInsertion == -1 && index == newI)) newArray[index].state = 'inspecting'
-          if( index < newInsertion || index < newJ) newArray[index].state = 'sorted'
-        }
-        newInsertion = -1
+        newArray = sortedColors(newArray) 
         newI++
-        newJ = newI - 1
+      }else{ 
+        if(newJ >= 0 && newArray[newJ].heigth > newArray[newI].heigth){
+          newInsertion = newJ
+          newArray = defaultColors(newArray,newInsertion,newI,newJ)
+          newJ--
+        }else{
+          newArray = insertionColors(newArray,newInsertion,newI,newJ)
+          newInsertion = -1
+          newI++
+          newJ = newI - 1
+        }
       }
       setBars({ 
+        algo: 'insertionSort',
         array: newArray,
         insertion: newInsertion,
         i: newI,
@@ -61,5 +38,40 @@ const insertionSort = {
       })
     },speed)
   },
+}
+const defaultColors = (array,insertion,i,j) => {
+  return array.map( (bar , index) => {
+    bar.state = 'new'
+    if( index == i ) bar.state = 'inspecting'
+    if( index < i ) bar.state = 'selected'
+    if( index < insertion) bar.state = 'sorted'
+    return bar
+  })
+}
+const sortedColors = array => {
+  return array.map( bar => {
+    bar.status = 'sorted'
+    return bar
+  })
+}
+const insertionColors = (array,insertion,i,j) => {
+  return insert(array,insertion,i).map( (bar,index) => {
+    bar.state = 'new'
+    if( index <= i) bar.state = 'selected'
+    if( index == insertion || (insertion == -1 && index == i)) bar.state = 'inspecting'
+    if( index < insertion || index < j) bar.state = 'sorted'
+    return bar
+  })
+}
+const insert = (array, insertion, element) => {
+  console.log('insert',array)
+  if(insertion < 0) return array
+  const newArray = [...array]
+  const temp = newArray[element].heigth
+  for (let index = element - 1; index >= insertion; index--) {
+    newArray[index + 1].heigth = newArray[index].heigth
+  }
+  newArray[insertion].heigth = temp
+  return newArray
 }
 export default insertionSort
