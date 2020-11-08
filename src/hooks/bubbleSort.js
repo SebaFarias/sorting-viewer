@@ -13,9 +13,7 @@ const bubbleSort = {
       let newArray = [...array]
       let newI = i
       let newJ = j      
-      if( i +  1 < n && array[j].heigth > array[j+1].heigth){
-        newArray = swap(newArray,newJ)
-      }
+      if( i +  1 < n && array[j].heigth > array[j+1].heigth) newArray = swap(newArray,newJ)
       newArray = defaultColors(newArray,newI,newJ)
       if(newJ + newI + 2 >= n){
         newI++
