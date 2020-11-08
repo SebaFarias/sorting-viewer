@@ -64,7 +64,6 @@ const insertionColors = (array,insertion,i,j) => {
   })
 }
 const insert = (array, insertion, element) => {
-  console.log('insert',array)
   if(insertion < 0) return array
   const newArray = [...array]
   const temp = newArray[element].heigth
