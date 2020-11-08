@@ -17,19 +17,19 @@ const generate = quantity => {
 }
 const Algorithm = {
   selectionSort: {
-    initial: size => selectionSort.initial(size, generate) ,    
+    initial: size => selectionSort.initial(generate(size)) ,    
     step: ({array , i, j, minIndex}, setBars, run, speed) =>{
       selectionSort.step({array , i, j, minIndex}, setBars, run, speed) 
     },
   },
     bubbleSort: {
-    initial: size => bubbleSort.initial(size, generate) ,
+    initial: size => bubbleSort.initial(generate(size)) ,
     step: ({array , i, j}, setBars, run, speed) => {
       bubbleSort.step({array , i, j}, setBars, run, speed)
     },
   },
   insertionSort: {
-    initial: size => insertionSort.initial(size, generate) ,
+    initial: size => insertionSort.initial(generate(size)) ,
     step: ({array, insertion, i, j}, setBars, run, speed) => {
       insertionSort.step({array, insertion, i, j}, setBars, run, speed)
     },
