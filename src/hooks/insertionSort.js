@@ -10,6 +10,7 @@ const insertionSort = {
   },
   step: ({array, insertion, i, j}, setBars, run, speed) => {
     if(run && i <= array.length) setTimeout( () => {
+      console.log(i)
       let newArray = [...array]
       let newInsertion = insertion
       let newI = i
@@ -42,23 +43,23 @@ const insertionSort = {
 const defaultColors = (array,insertion,i,j) => {
   return array.map( (bar , index) => {
     bar.state = 'new'
-    if( index == i ) bar.state = 'inspecting'
-    if( index < i ) bar.state = 'selected'
+    if( index == i ) bar.state = 'selected'
+    if( index < i ) bar.state = 'inspecting'
     if( index < insertion) bar.state = 'sorted'
     return bar
   })
 }
 const sortedColors = array => {
   return array.map( bar => {
-    bar.status = 'sorted'
+    bar.state = 'sorted'
     return bar
   })
 }
 const insertionColors = (array,insertion,i,j) => {
   return insert(array,insertion,i).map( (bar,index) => {
     bar.state = 'new'
-    if( index <= i) bar.state = 'selected'
-    if( index == insertion || (insertion == -1 && index == i)) bar.state = 'inspecting'
+    if( index <= i) bar.state = 'inspecting'
+    if( index == insertion || (insertion == -1 && index == i)) bar.state = 'selected'
     if( index < insertion || index < j) bar.state = 'sorted'
     return bar
   })
