@@ -1,13 +1,21 @@
-import React, {useState} from 'react'
+import React, {useEffect , useState} from 'react'
 import Bar from '../Bar/Bar'
 import Algorithm from '../../hooks/algorithm'
 import './bars.css'
 
-const Bars = ({run, size, speed, algo}) => { 
+const Bars = ({run, size, speed, algo, toggleRun}) => { 
   
   const [bars, setBars] = useState( Algorithm[algo].initial(size))
   
-  Algorithm[algo].step(bars, setBars, run, speed)
+  useEffect( () => {
+    if(algo !== bars.algo){ 
+      setBars( Algorithm[algo].initial(size))
+      toggleRun(false)
+    }else{
+      Algorithm[algo].step(bars, setBars, run, speed)
+    }
+  })
+  
 
   return(
     <main className="bars">

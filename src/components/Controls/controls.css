@@ -39,6 +39,10 @@ section{
   background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #8F8F8F 100%);
   display: flex;
 }
+.hide{
+  opacity: 0;
+  pointer-events: none;
+}
 .control:hover{
   transform: scale(1.1,1.1);
 }

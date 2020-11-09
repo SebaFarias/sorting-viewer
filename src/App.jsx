@@ -5,8 +5,8 @@ import Bars from './components/Bars/Bars'
 import Controls from './components/Controls/Controls'
 import './style.css'
 
-const INITIAL_SIZE = 40 
-const INITIAL_SPEED = 50  //In milliseconds
+const INITIAL_SIZE = 40
+const INITIAL_SPEED = 200  //In milliseconds
 
 const App = () => {
 
@@ -37,7 +37,6 @@ const App = () => {
   const setAlgo = newAlgorithm => {
     setAlgorithm(newAlgorithm)
   }
-
   return(
     <LanguageContext.Provider value={language}>
       <Header 
@@ -50,6 +49,7 @@ const App = () => {
         size={size}
         speed={speed}
         algo={algorithm}
+        toggleRun={setRunnung}
       />
       <Controls 
         run={running} 

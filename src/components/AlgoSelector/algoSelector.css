@@ -6,3 +6,67 @@
   transform: translate(0,10%);
   background: linear-gradient(180deg, #1F928B 0%, #3BD5CD 74%);
 }
+.algo-select{
+  display: block;
+  position: absolute;
+  z-index: 1;
+  bottom: 0.25em;
+  height: calc(15vmin - 0.5em);
+  padding: .6em 1.4em .5em 4vmin;
+  left: 0;
+  width: min(50vw,700px);
+  transform: translateX(-25%);
+  animation: 500ms expand-select;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  border-radius: calc(7vmin - 0.5em);
+  color: rgb(230, 230, 250);
+  border: 1px solid #aaa;
+  background-color: #252B3B;
+  background-image: url('../../../assets/arrow.svg') ,
+    radial-gradient(50% 50% at 50% 50%, #252B3B 0%, #3B4964 200%);
+  background-position: right 0.5em top 50%, 0 0;
+  background-repeat: no-repeat, repeat;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+option:nth-child(2n){
+  background-color: #2C364A;
+}
+
+.select-css {
+  line-height: 1.3;
+	max-width: 100%;
+	margin: 0;
+	background-size: .65em auto, 100%;
+}
+.algo-select::-ms-expand {
+  display: none;
+}
+.algo-select:hover {
+  border-color: #888;
+}
+.algo-select:focus {
+  border-color: #aaa;
+	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: rgb(240, 240, 255);
+	outline: none;
+}
+.algo-select option {
+  font-weight:400;
+}
+@keyframes expand-select {
+  0% { 
+    width: calc(15vmin - 0.5em); 
+    transform: translateX(0);
+  }
+  100% { 
+    width: min(50vw,700px);
+    transform: translateX(-25%);
+  }
+}

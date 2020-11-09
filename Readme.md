@@ -67,3 +67,11 @@ Complete list : https://www.geeksforgeeks.org/sorting-algorithms/
 * Merge Sort for Linked Lists
 * Merge Sort for Doubly Linked List
 * 3-way Merge Sort
+
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#083146",
+    "titleBar.activeBackground": "#0B4462",
+    "titleBar.activeForeground": "#F7FCFE"
+  }
+}
