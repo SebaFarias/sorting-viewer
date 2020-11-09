@@ -11,7 +11,9 @@ const AlgoSelector = ({algo, setAlgo}) => {
   const algoList = Object.keys(lang.algorithms)
   const handleButtonClick = () => {
     document.getElementById('sizeBtn').parentElement.classList.add('hide')
-    setSelected({selecting:true})
+    setSelected({
+      option: algo,
+      selecting:true})
   }
   const handleChange = event => {
     const newAlgo = event.target.value
