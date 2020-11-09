@@ -10,7 +10,6 @@ const insertionSort = {
   },
   step: ({array, insertion, i, j}, setBars, run, speed) => {
     if(run && i <= array.length) setTimeout( () => {
-      console.log(i)
       let newArray = [...array]
       let newInsertion = insertion
       let newI = i
