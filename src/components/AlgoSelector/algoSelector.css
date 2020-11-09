@@ -6,6 +6,10 @@
   transform: translate(0,10%);
   background: linear-gradient(180deg, #1F928B 0%, #3BD5CD 74%);
 }
+/*
+* Select styled based on this guide:
+* Styling a Select Like It’s 2019: https://www.filamentgroup.com/lab/select-css.html
+*/
 .algo-select{
   display: block;
   position: absolute;
