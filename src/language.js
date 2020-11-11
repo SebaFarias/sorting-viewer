@@ -4,6 +4,7 @@ const LANGUAGE_KEY = 'ENGLISH';
 const ENGLISH = { 
     title: 'Sorting Algorithms',
     subtitle: 'Coosen algorithm: ',
+    welcome: 'Welcome! choose an Algorithm',
     algorithms: {
       selectionSort: 'Selection sort',
       bubbleSort: 'Bubble sort',
@@ -13,13 +14,14 @@ const ENGLISH = {
       true: 'Pause',
       false: 'Run'
     },
-    size: 'Size',
+    size: 'Length',
     speed: 'Speed',
     algo: 'Algorithm',
   };
   const ESPANOL = {  
     title: 'Algoritmos de Orden',
     subtitle: 'Algoritmo escogido: ',
+    welcome: 'Bienvenido! escoje un Algoritmo',
     algorithms: {
       selectionSort: 'Orden por selección',
       bubbleSort: 'Orden de burbuja',
@@ -32,15 +34,15 @@ const ENGLISH = {
     size: 'Cantidad',
     speed: 'Velocidad',
     algo: 'Algoritmo',
-};
-
-const Language = {
+  };
+  
+  const Language = {
     getLanguage: () => {
-        try {
-            return JSON.parse(window.localStorage.getItem(LANGUAGE_KEY)) === true
-        } catch (e) {
-            return false
-        }
+      try {
+        return JSON.parse(window.localStorage.getItem(LANGUAGE_KEY)) === true
+      } catch (e) {
+        return false
+      }
     },
     setLanguage: value => {
         try {
