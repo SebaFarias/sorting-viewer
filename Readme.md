@@ -75,3 +75,21 @@ Complete list : https://www.geeksforgeeks.org/sorting-algorithms/
     "titleBar.activeForeground": "#F7FCFE"
   }
 }
+
+
+Contexto para tener un estado Global de:
+
+Sorted
+Run
+Speed
+Size
+Algorithm
+Array
+indexes
+selecting
+
+Qizás no tan necesario:
+  Separar bars en BarsContainer(1) y bars(2)
+  (1) Se encarga de guardar un estado y gestionarlo (actualizarlo, etc...)
+  (2) Solo se encarga de mostrar lo que le entrega el BarsContainer
+

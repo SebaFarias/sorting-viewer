@@ -1,10 +1,7 @@
-import React, {useContext} from 'react'
-import LangContext from '../../language'
+import React from 'react'
 import './langToggler.css'
 
 const LangToggler = ({eng, toggle}) => {
-  
-  const lang = useContext(LangContext)
 
   return(
     <div className="toggler-container" onClick={toggle}>

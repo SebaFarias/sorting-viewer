@@ -1,0 +1,43 @@
+.size-icon,
+.speed-icon{
+  height: 6.8vmin;
+  width: 6.8vmin;
+  margin: auto;
+}
+.size-icon{
+  background: linear-gradient(90deg, #EFA923 0%, #EBD33D 100%);
+  clip-path: polygon(70% 13%, 70% 0%, 100% 25%, 70% 50%, 70% 37%, 0% 37%, /*Upper Arrow*/
+  0% 75%, 30% 50%, 30% 63%, 100% 63%, 100% 87%, 30% 87%, 30% 100%, 0% 75%, /*Bottom Arrow*/
+  0% 13% );    
+}
+.size-icon:hover{
+  animation: 1.2s moving-arrows infinite;
+}
+.speed-icon{
+  background: linear-gradient(180deg, #82B53E 0%, #A9D154 100%);
+  clip-path: polygon(30% 100% , 50% 30% , 70% 100%);
+  transform-origin: bottom;
+  transition: transform 200ms ease-in-out;
+  transform: rotateX(-45deg)
+}
+@keyframes moving-arrows{
+  0%{
+    transform: scale(1,1)  
+  }
+  20%{
+    transform: scale(1.2,1)  
+  }
+  60%{
+    transform: scale(0.8,1);
+  }
+  100%{
+    transform: scale(1,1)  
+  }
+}
+.size-selector {
+  width: 100%;
+  height: calc(15vmin - 0.5em);
+  margin: 7.45px 0;
+  -webkit-appearance: none;
+  background: transparent; /* Otherwise white in Chrome */
+}

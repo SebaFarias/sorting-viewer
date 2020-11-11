@@ -1,5 +1,6 @@
 import React, {useState ,useCallback} from 'react'
 import LanguageContext , { ENGLISH , ESPANOL , Language } from './language'
+import {GlobalProvider} from './globalContext'
 import Header from './components/Header/Header'
 import Bars from './components/Bars/Bars'
 import Controls from './components/Controls/Controls'
@@ -11,56 +12,47 @@ const INITIAL_SPEED = 200  //In milliseconds
 const App = () => {
 
   const [ english, setEnglish ] = useState(Language.getLanguage)
-  const [running, setRunnung] = useState(false)
+  
   const [size, setSize] = useState(INITIAL_SIZE)
   const [speed, setSpeed] = useState(INITIAL_SPEED)
   const [algorithm, setAlgorithm] = useState('insertionSort')
   const language = english ? ENGLISH : ESPANOL
   
-  const toggleLanguage = useCallback( () => {
+  const toggleLanguage = useCallback( () => {  
     setEnglish( prevState => {
       const newState = !prevState
       Language.setLanguage(newState)
       return newState
     })
+    document.title = english ? 'Sorting Viewer' : 'Visualizador de Ordenado'
   },[english])
 
-  const toggleRunning = () => {
-    setRunnung(!running)
-  }
   const sizeRange = newSize => {
     setSize(newSize)
   }
   const speedRange = newSpeed => {
     setSpeed(newSpeed)
   }
-  const setAlgo = newAlgorithm => {
-    setAlgorithm(newAlgorithm)
-  }
   return(
     <LanguageContext.Provider value={language}>
-      <Header 
-        algo={algorithm}
-        eng={english} 
-        toggleLng={toggleLanguage} 
-      />
-      <Bars
-        run={running} 
-        size={size}
-        speed={speed}
-        algo={algorithm}
-        toggleRun={setRunnung}
-      />
-      <Controls 
-        run={running} 
-        size={size}
-        speed={speed}
-        algo={algorithm}
-        toggleRun={toggleRunning}
-        sizeRange={sizeRange}
-        speedRange={speedRange}
-        setAlgo={setAlgo}
-      />
+      <GlobalProvider>
+        <Header 
+          algo={algorithm}
+          eng={english} 
+          toggleLng={toggleLanguage} 
+        />
+        <Bars
+          size={size}
+          speed={speed}
+          algo={algorithm}
+        />
+        <Controls 
+          size={size}
+          speed={speed}
+          sizeRange={sizeRange}
+          speedRange={speedRange}
+        />
+      </ GlobalProvider>
     </LanguageContext.Provider>
   )
 }
