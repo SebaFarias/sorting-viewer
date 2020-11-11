@@ -11,7 +11,7 @@ const Algorithms = {
       return [ resize( array , newSize ) , selectionSort.initial() ]
     },
     step: ( array , { i , j , minIndex } ) => {
-      selectionSort.step( array , { i , j , minIndex } ) 
+      return selectionSort.step( array , { i , j , minIndex } ) 
     },
   },
   bubbleSort: {
@@ -22,7 +22,7 @@ const Algorithms = {
       return [ resize( array , newSize ) , bubbleSort.initial() ]
     },
     step: ( array , { i , j } ) => {
-      bubbleSort.step( array , { i , j } )
+      return bubbleSort.step( array , { i , j } )
     },
   },
   insertionSort: {
@@ -33,7 +33,7 @@ const Algorithms = {
       return [ resize(array,newSize) , insertionSort.initial() ] 
   },
     step: ( array , { insertion , i , j } ) => {
-      insertionSort.step( array , { insertion , i , j } )
+      return insertionSort.step( array , { insertion , i , j } )
     },
   },
 }
