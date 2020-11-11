@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react'
+import React, {useContext} from 'react'
 import {GlobalContext} from '../../globalContext'
 import LanguageContext from '../../language'
 import RangeHud from '../RangeHud/RangeHud'
@@ -7,31 +7,23 @@ import './rangeSelector.css'
 const MAX_ARRAY_SIZE = 60
 const MIN_ARRAY_SIZE = 6
 
-const SizeBtn = () => {
+const SizeBtn = ({ selecting , tools }) => {
 
-const lang = useContext(LanguageContext)
-const [ global , controller ] = useContext(GlobalContext)
-const [ selecting , setSelecting ] = useState(false)
+  const lang = useContext(LanguageContext)
+  const [ global , controller ] = useContext(GlobalContext)
 
-const handleButtonClick = () => {
-  document.getElementById('algoBtn').parentElement.classList.add('hide')
-  setSelecting(true) 
-  }
+  const handleButtonClick = () => {
+    tools.openSize()
+    }
   const handleChange = event => {
-    console.log(global.size);
     controller.setSize(event.target.value)
-    // cancelSelection()
-  }
-  const cancelSelection = () => {
-    document.getElementById('algoBtn').parentElement.classList.remove('hide')
-    setSelecting(false)
   }
 
   return(
     <div className='control'>
       <label className='label' htmlFor='sizeBtn'>{lang['size']}</label>
       {selecting ?
-      <div>
+      <div id='sizeSelector'>
         <RangeHud 
           level = {(global.size - MIN_ARRAY_SIZE) * 100 / (MAX_ARRAY_SIZE - MIN_ARRAY_SIZE)}
           text = {global.size}

@@ -1,45 +1,29 @@
-import React, {useState,useContext} from 'react'
+import React, {useContext} from 'react'
 import LanguageContext from '../../language'
 import {GlobalContext} from '../../globalContext'
 import './algoBtn.css'
 
-const AlgoSelector = () => {
+const AlgoSelector = ({ selecting , tools }) => {
+
   const lang = useContext(LanguageContext)
   const [ global , controller ] = useContext(GlobalContext)
-  const [ selected , setSelected ] = useState({
-    option: global.algorithm,
-    selecting: false,
-  })
   const algoList = Object.keys(lang.algorithms)
+
   const handleButtonClick = () => {
-    document.getElementById('runBtn').parentElement.classList.add('hide')
-    setSelected({
-      ...selected,
-      selecting:true})
+    tools.openAlgo()
   }
   const handleChange = event => {
-    const newAlgo = event.target.value
-    setSelected({
-      option: newAlgo,
-      selecting: false,
-    })
-    document.getElementById('runBtn').parentElement.classList.remove('hide')
-    controller.setAlgo(newAlgo)
-  }
-  const cancelSelection = () => {
-    document.getElementById('runBtn').parentElement.classList.remove('hide')
-    setSelected({
-      ...selected,
-      selecting:false})
+    controller.setAlgo(event.target.value)
+    tools.usedAlgo()
   }
 
   return(
     <div className= 'control'>
     <label className='label' htmlFor='algoBtn'>{ lang.algo }</label>
     
-    { selected.selecting ?
+    { selecting ?
     
-    <select className='algo-select' value={global.algorithm} onChange={handleChange}>
+    <select id='algoSelector' className='algo-select' value={global.algorithm} onChange={handleChange}>
       {algoList.map( algoName =>{
         return <option key={algoName} value={algoName}>{lang.algorithms[algoName]}</option>
       })}
