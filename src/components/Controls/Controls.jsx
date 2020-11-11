@@ -1,7 +1,7 @@
 import React from 'react'
 import './controls.css'
 import RunBtn from '../RunBtn/RunBtn'
-import AlgoSelector from '../AlgoSelector/AlgoSelector'
+import AlgoBtn from '../AlgoBtn/AlgoBtn'
 import SpeedBtn from '../SpeedBtn/SpeedBtn'
 import SizeBtn from '../SizeBtn/SizeBtn'
 
@@ -10,7 +10,7 @@ const Controls = () => {
     <section>
       <article className="left-controls">
         <SizeBtn/>
-        <AlgoSelector/>
+        <AlgoBtn/>
       </article>
       <article className="right-controls">
         <RunBtn/>

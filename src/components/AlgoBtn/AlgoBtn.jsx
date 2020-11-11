@@ -1,7 +1,7 @@
 import React, {useState,useContext} from 'react'
 import LanguageContext from '../../language'
 import {GlobalContext} from '../../globalContext'
-import './algoSelector.css'
+import './algoBtn.css'
 
 const AlgoSelector = () => {
   const lang = useContext(LanguageContext)
