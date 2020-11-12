@@ -18,25 +18,30 @@ const AlgoSelector = ({ selecting , tools }) => {
   }
 
   return(
-    <div className= 'control'>
-    <label className='label' htmlFor='algoBtn'>{ lang.algo }</label>
-    
-    { selecting ?
-    
-    <select id='algoSelector' className='algo-select' value={global.algorithm} onChange={handleChange}>
-      {algoList.map( algoName =>{
-        return <option key={algoName} value={algoName}>{lang.algorithms[algoName]}</option>
-      })}
-  </select>
-    
-    :
-    
-    <button id='algoBtn' className='algo btn' name='algo button' onClick={handleButtonClick}>
-      <div className= 'algo-icon'></div>
-    </button>
-    }
-
-  </div>
+    <div className='control algo'>
+      <label className='label' htmlFor='algoBtn'>{ lang.algo }</label>      
+      { selecting ?      
+      <select 
+        id='algoSelector' 
+        className='algo-select' 
+        value={global.algorithm} 
+        onChange={handleChange}
+      >
+        {algoList.map( algoName =>{
+          return <option key={algoName} value={algoName}>{lang.algorithms[algoName]}</option>
+        })}
+      </select>      
+      :      
+      <button 
+        id='algoBtn' 
+        className='algo btn' 
+        name='algo button' 
+        onClick={handleButtonClick}
+      >
+        <div className= 'algo-icon'></div>
+      </button>
+      }
+    </div>
   )
 }
 

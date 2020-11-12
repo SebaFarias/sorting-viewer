@@ -77,7 +77,7 @@ hsl(0,0%,10%)100%);
   opacity: 0;
   pointer-events: none;
 }
-.control:hover{
+.control:hover:not(.using){
   transform: scale(1.1,1.1);
 }
 .label{
@@ -88,5 +88,23 @@ hsl(0,0%,10%)100%);
   font-weight: 900;
   text-transform: uppercase;
   top:-1.5em;
+  transition: all 500ms ease-in-out;
+}
+.using>.label{
+  width: min(40vw,500px);
+}
+.size>.label,
+.run>.label{
   left: -50%;
+}
+.size.using>.label{
+  left: 0;
+}
+.algo>.label,
+.speed>.label{
+  right: -50%;
+}
+.algo.using>.label,
+.speed.using>.label{
+  right: 0;
 }

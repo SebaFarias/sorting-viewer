@@ -22,7 +22,6 @@ const bubbleSort = {
     return [
       newArray ,
       {
-        array: newArray,
         i: newI,
         j: newJ,
       }

@@ -5,7 +5,7 @@ import AlgoBtn from '../AlgoBtn/AlgoBtn'
 import SpeedBtn from '../SpeedBtn/SpeedBtn'
 import SizeBtn from '../SizeBtn/SizeBtn'
 
-const CONTRACT_ANIMATION_TIME = 600
+const CONTRACT_ANIMATION_TIME = 500
 
 const Controls = () => {
 
@@ -22,6 +22,7 @@ const Controls = () => {
       if( leftRef.current && !leftRef.current.contains(event.target)){
         if(using.sizeBtn || using.algoBtn){
           document.getElementById(using.sizeBtn?'sizeSelector':'algoSelector').classList.add('contract')
+          document.getElementById(using.sizeBtn?'sizeSelector':'algoSelector').parentElement.classList.remove('using')
           setTimeout(() => {
             showAll()
             setUsing({sizeBtn: false, algoBtn: false, speedBtn: false,})
@@ -30,6 +31,7 @@ const Controls = () => {
       }
       if( using.speedBtn && rightRef.current && !rightRef.current.contains(event.target)){
         document.getElementById('speedSelector').classList.add('contract')
+        document.getElementById('speedSelector').parentElement.classList.remove('using')
         setTimeout(() => {
           showAll()
           setUsing({sizeBtn: false,algoBtn: false,speedBtn: false,})
@@ -60,10 +62,12 @@ const Controls = () => {
     },
     openAlgo: () => {      
       document.getElementById('sizeBtn').parentElement.classList.add('hide')
+      document.getElementById('algoBtn').parentElement.classList.add('using')
       setUsing({sizeBtn: false,algoBtn: true,speedBtn: false,})
     },
     usedAlgo: () => {
       document.getElementById('algoSelector').classList.add('contract')
+      document.getElementById('algoSelector').parentElement.classList.remove('using')
           setTimeout(() => {
             showAll()
             setUsing({sizeBtn: false, algoBtn: false, speedBtn: false,})

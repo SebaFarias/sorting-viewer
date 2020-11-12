@@ -1,4 +1,5 @@
 import React from 'react'
+import './rangeHud.css'
 
 const RangeHud = ({ level , text , control }) => {
 

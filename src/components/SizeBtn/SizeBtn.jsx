@@ -20,7 +20,7 @@ const SizeBtn = ({ selecting , tools }) => {
   }
 
   return(
-    <div className='control'>
+    <div className={`control size ${selecting? 'using' : ''}`}>
       <label className='label' htmlFor='sizeBtn'>{lang['size']}</label>
       {selecting ?
       <div id='sizeSelector'>

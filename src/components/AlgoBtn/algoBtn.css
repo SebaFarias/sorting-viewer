@@ -10,6 +10,10 @@
 * Select styled based on this guide:
 * Styling a Select Like It’s 2019: https://www.filamentgroup.com/lab/select-css.html
 */
+.algo-select.contract{
+  width: calc(15vmin - 0.5em); 
+  transition: all 500ms;
+}
 .algo-select{
   display: block;
   position: absolute;
@@ -17,9 +21,8 @@
   bottom: 0.25em;
   height: calc(15vmin - 0.5em);
   padding: .6em 1.4em .5em 4vmin;
-  left: 0;
-  width: min(50vw,700px);
-  transform: translateX(-25%);
+  right: 0;
+  width: min(40vw,500px);
   animation: 500ms expand-select;
   font-size: 16px;
   font-weight: 400;
@@ -67,10 +70,8 @@ option:nth-child(2n){
 @keyframes expand-select {
   0% { 
     width: calc(15vmin - 0.5em); 
-    transform: translateX(0);
   }
   100% { 
-    width: min(50vw,700px);
-    transform: translateX(-25%);
+    width: min(40vw,500px);
   }
 }

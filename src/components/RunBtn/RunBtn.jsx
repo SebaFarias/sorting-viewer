@@ -9,7 +9,7 @@ const lang = useContext(LanguageContext)
 const [ global , controller ] = useContext(GlobalContext)
 
   return(    
-        <div className= 'control'>
+        <div className= 'control run'>
           <label className='label' htmlFor='runBtn'>{ global.run? lang.run.true : lang.run.false}</label>
           <button id='runBtn' className='run btn' name='run button' aria-checked={global.run} onClick={controller.toggleRunning}>
             <div className={`run-button ${global.run?'pause-icon':'run-icon'}`}></div>

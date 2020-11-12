@@ -1,0 +1,24 @@
+.size-screen,
+.speed-screen{
+  position: relative;
+  width: min(40vw,500px);
+  height: 15vmin; 
+}
+.background,
+.fill{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(40vw,500px);
+  height: 15vmin; 
+  border-radius: 101px;
+}
+.background{
+  background-color: darkslategrey;
+}
+.speed.fill{
+  background-color: limegreen;
+}
+.size.fill{
+  background-color: yellowgreen;
+}
