@@ -14,7 +14,7 @@ const AlgoSelector = ({ selecting , tools }) => {
   }
   const handleChange = event => {
     controller.setAlgo(event.target.value)
-    tools.usedAlgo()
+    tools.closeAlgo()
   }
 
   return(

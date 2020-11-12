@@ -23,7 +23,7 @@
   padding: .6em 1.4em .5em 4vmin;
   right: 0;
   width: min(40vw,500px);
-  animation: 500ms expand-select;
+  animation: 500ms expand;
   font-size: 16px;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
@@ -67,11 +67,11 @@ option:nth-child(2n){
 .algo-select option {
   font-weight:400;
 }
-@keyframes expand-select {
+@keyframes expand{
   0% { 
     width: calc(15vmin - 0.5em); 
   }
   100% { 
-    width: min(40vw,500px);
+    width: min(40vw - .75rem , 500px - .75rem);
   }
 }

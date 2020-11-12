@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import {GlobalContext} from '../../globalContext'
 import LanguageContext from '../../language'
 import RangeHud from '../RangeHud/RangeHud'
+import './speedBtn.css'
 
 const MAX_MS_BETWEEN_STEP = 1000
 const MIN_MS_BETWEEN_STEP = 20
@@ -15,7 +16,7 @@ const SpeedBtn = ({ selecting , tools }) => {
     tools.openSpeed() 
     }
   const handleChange = event => {
-    const newSpeed = MAX_MS_BETWEEN_STEP + MIN_MS_BETWEEN_STEP - event.target.value
+    const newSpeed = 1000 / event.target.value
     controller.setSpeed(newSpeed)
   }
 
@@ -25,17 +26,17 @@ const SpeedBtn = ({ selecting , tools }) => {
       {selecting?
       <div id='speedSelector'>
         <RangeHud 
-          level={(100 * (MAX_MS_BETWEEN_STEP + MIN_MS_BETWEEN_STEP - global.speed) / (MAX_MS_BETWEEN_STEP - MIN_MS_BETWEEN_STEP))} 
-          text={`${(1000/global.speed).toString().substring(0,3)} / s`}  
+          level={( 2000 / global.speed)} 
+          text={`${(1000/global.speed).toString().substring(0,3).replace(/\.$/, "")} / s`}  
           control='speed'/>
         <input 
           className='range speed'
           type = 'range'
-          step = '5'
+          step = '1'
           onInput = {handleChange}
-          min = {MIN_MS_BETWEEN_STEP}
-          max = {MAX_MS_BETWEEN_STEP}
-          value = {MAX_MS_BETWEEN_STEP + MIN_MS_BETWEEN_STEP - global.speed}
+          min = {1000 / MAX_MS_BETWEEN_STEP}
+          max = {1000 / MIN_MS_BETWEEN_STEP}
+          value = {1000 / global.speed}
         ></input>
       </div>  
       :

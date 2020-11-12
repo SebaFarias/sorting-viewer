@@ -34,10 +34,9 @@
     transform: scale(1,1)  
   }
 }
-.size-selector {
-  width: 100%;
-  height: calc(15vmin - 0.5em);
-  margin: 7.45px 0;
+.range {
+  width: min(40vw - .75rem,500px - .75rem);
+  margin-top: -.5rem;
   -webkit-appearance: none;
   background: transparent; /* Otherwise white in Chrome */
 }

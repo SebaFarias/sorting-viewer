@@ -3,6 +3,11 @@ import Model , { resize }from './Model/model'
 
 const INITIAL_SIZE = 20
 const INITIAL_SPEED = 200  //In milliseconds
+const MAX_ARRAY_SIZE = 60
+const MIN_ARRAY_SIZE = 6
+const MAX_MS_BETWEEN_STEP = 1000
+const MIN_MS_BETWEEN_STEP = 20
+
 export const GlobalContext = createContext()
   
 export const GlobalProvider = (props) => {
@@ -81,6 +86,10 @@ export const GlobalProvider = (props) => {
 
         })
       })
+    },
+    setSliderValue: ( control , value) => {
+      if( control === 'speed' ) return controller.setSpeed(Math.round( 2000 / value ))
+      controller.setSize(Math.round( value * (MAX_ARRAY_SIZE - MIN_ARRAY_SIZE)/100 ) + MIN_ARRAY_SIZE)
     },
     setAlgo: newAlgo => {
       initialize(newAlgo , state.size)

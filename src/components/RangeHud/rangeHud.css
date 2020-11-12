@@ -5,20 +5,50 @@
   height: 15vmin; 
 }
 .background,
+.fill,
+.range.size,
+.range.speed{
+  animation: 500ms expand; /* on algoBtn.css*/
+}
+.background,
 .fill{
   position: absolute;
-  top: 0;
-  right: 0;
-  width: min(40vw,500px);
-  height: 15vmin; 
-  border-radius: 101px;
+  top: .25rem;
+  width: min(40vw - .75rem,500px - .75rem);
+  height: calc(15vmin - .75rem); 
+  border-radius: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 10vmin;
+  text-align: center;
+  line-height: calc(15vmin - .75rem); 
+  border: 2px solid #29292F;
 }
 .background{
   background-color: darkslategrey;
 }
+.size.background{
+  color: yellowgreen;
+}
+.size.background,
+.size.fill{
+  left: .5rem;
+}
+.speed.background,
+.speed.fill{
+  right: .5rem;
+}
 .speed.fill{
   background-color: limegreen;
+  color: darkslategrey;
 }
 .size.fill{
   background-color: yellowgreen;
+  color: darkslategrey;
+}
+.contract>.background,
+.contract>.fill,
+.contract>.range{
+  width: calc(15vmin - 0.5em); 
+  transition: all 500ms;
 }
