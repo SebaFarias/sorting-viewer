@@ -35,7 +35,7 @@ const stopUpdating = () => {
 const hanldeNewValue = event => {
   event.preventDefault()
   event.stopImmediatePropagation()
-  const pos = event.pageX || event.clientX
+  const pos = event.pageX || event.clientX || event.changedTouches[0].clientX
   const rect = document.querySelector('.fill').getBoundingClientRect()
   let percentage = 100 * (pos - rect.left) / (rect.right - rect.left)
   if(percentage > 100) percentage = 100
