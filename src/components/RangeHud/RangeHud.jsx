@@ -11,14 +11,16 @@ useEffect( () => {
   document.addEventListener('touchstart', handleTouchStart)
   document.addEventListener('mousedown', handleTouchStart)
     return () => {
-      document.removeEventListener('touchstart', handleTouchStart)
+      document.removeEventListener('touchstart', handleTouchStart,{passive: false})
       document.removeEventListener('mousedown', handleTouchStart)
     }
 }) 
 
 const handleTouchStart = event => {
   if(ref.current && ref.current.contains(event.target)){
-    document.addEventListener('touchmove',hanldeNewValue)
+    event.preventDefault()
+    event.stopImmediatePropagation()
+    document.addEventListener('touchmove',hanldeNewValue,{passive: false})
     document.addEventListener('touchend',stopUpdating)
     document.addEventListener('mousemove',hanldeNewValue)
     document.addEventListener('mouseup',stopUpdating)
