@@ -9,7 +9,7 @@ const Bars = () => {
   const global = useContext(GlobalContext)[0]
   
   return(
-    <main className="bars" style={{height: `${window.innerWidth>600?window.innerHeight/2:0.4*window.innerHeight}px`}}>
+    <main className="bars">
       {!global.algorithm? <NoAlgoCard target='algoSelector' before='algoBtn'/> : global.bars.map( bar => {
         return <Bar key={bar.hash} situation={bar.state} height={bar.heigth}/>
       })}

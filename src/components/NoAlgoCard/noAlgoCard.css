@@ -32,7 +32,7 @@
   left: 50%;
   transform: translate(-50%,-50%);
   border-radius: .25rem;
-  background: rgb(200,200,250);
+  background: rgb(230,230,250);
 }
 .no-algo-img::after{
 transform: translate(-50%,-50%) rotate(90deg);

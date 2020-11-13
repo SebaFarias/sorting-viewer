@@ -1,7 +1,7 @@
 section{
   display: flex;
   align-items: center;
-  margin-top: auto;
+  margin-top: 5vh;
   height: 20vh;  
 }
 .left-controls,.right-controls{

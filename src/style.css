@@ -21,3 +21,14 @@ body{
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 600px) { 
+  header{
+    margin-bottom: auto;
+  }
+  .bars{
+    height: 50vh;
+  }
+  section{
+    margin-top: auto;
+  }
+ }

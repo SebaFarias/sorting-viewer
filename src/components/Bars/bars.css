@@ -1,4 +1,5 @@
 .bars{
   display: flex;
   justify-content: center;
+  height: 40vh;
 }

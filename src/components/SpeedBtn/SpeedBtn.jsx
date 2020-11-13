@@ -27,7 +27,7 @@ const SpeedBtn = ({ selecting , tools }) => {
       <div id='speedSelector'>
         <RangeHud 
           level={( 2000 / global.speed)} 
-          text={`${(1000/global.speed).toString().substring(0,3).replace(/\.$/, "")} / s`}  
+          text={`${(1000/global.speed).toString().substring(0,3).replace(/\.$/, '')} / s`}  
           control='speed'/>
         <input 
           className='range speed'
