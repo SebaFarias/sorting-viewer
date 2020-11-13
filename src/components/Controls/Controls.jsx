@@ -1,5 +1,6 @@
-import React , {useState, useRef, useEffect} from 'react'
+import React , {useState, useRef, useEffect, useContext} from 'react'
 import './controls.css'
+import {GlobalContext} from '../../globalContext'
 import RunBtn from '../RunBtn/RunBtn'
 import AlgoBtn from '../AlgoBtn/AlgoBtn'
 import SpeedBtn from '../SpeedBtn/SpeedBtn'
@@ -14,6 +15,7 @@ const Controls = () => {
     algoBtn: false,
     speedBtn: false,
   })
+  const global = useContext(GlobalContext)[0]
   const leftRef = useRef(null)
   const rightRef = useRef(null)
 
@@ -21,7 +23,7 @@ const Controls = () => {
     const handleClickOutside = event => {
       if( (using.sizeBtn || using.algoBtn) && leftRef.current && !leftRef.current.contains(event.target)){
         if(using.sizeBtn) controlsManager.closeSize()
-        if(using.algoBtn) controlsManager.closeAlgo()
+        if(using.algoBtn && global.algorithm) controlsManager.closeAlgo()
         if(event.target === document.getElementById('speedBtn')) controlsManager.openSpeed()
       }
       if( using.speedBtn && rightRef.current && !rightRef.current.contains(event.target)){
@@ -107,7 +109,7 @@ const Controls = () => {
     },
   }
   return(
-    <section>
+    <section style={{height: `${window.innerHeight/5}px`}}>
       <article className="left-controls" ref={leftRef}>
         <SizeBtn selecting ={using.sizeBtn} tools= {controlsManager}/>
         <AlgoBtn selecting ={using.algoBtn} tools= {controlsManager}/>

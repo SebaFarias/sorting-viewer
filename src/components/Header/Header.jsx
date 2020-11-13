@@ -9,10 +9,10 @@ const lang = useContext(LangContext)
 const [ global , controller ] = useContext(GlobalContext)
 
   return(
-    <header>
+    <header style={{height: `${window.innerHeight/5}px`}}>
       <LangToggler toggle={toggleLng} eng={eng}/>
       <h1>{lang.title}</h1>
-      <h2>{global.algorithm ? `${lang.subtitle} ${lang.algorithms[global.algorithm]}` : lang.welcome}</h2>
+      <h2>{global.algorithm ? `${lang.subtitle} ${lang.algorithms[global.algorithm]}` : ''}</h2>
     </header>
   )
 }

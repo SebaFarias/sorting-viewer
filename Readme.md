@@ -99,4 +99,4 @@ Support para Safari:
 
 [X] Clip-path: Agregar vendor prefix -webkit-
 [ ] OnMouseDown: Revisar eventos touch https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
-[ ] Tamaño del Viewport: css de Bars en 40 o 45 vh y en 50 solo con un media query de unos min-width = 600px
+[X] Tamaño del Viewport: css de Bars en 40 o 45 vh y en 50 solo con un media query de unos min-width = 600px

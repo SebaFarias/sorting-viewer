@@ -4,7 +4,8 @@ const LANGUAGE_KEY = 'ENGLISH';
 const ENGLISH = { 
     title: 'Sorting Algorithms',
     subtitle: 'Coosen algorithm: ',
-    welcome: 'Welcome! choose an Algorithm',
+    welcome: 'Welcome! Choose an Algorithm',
+    algoSelectPlaceholder: 'Choose one',
     algorithms: {
       selectionSort: 'Selection sort',
       bubbleSort: 'Bubble sort',
@@ -21,7 +22,8 @@ const ENGLISH = {
   const ESPANOL = {  
     title: 'Algoritmos de Orden',
     subtitle: 'Algoritmo escogido: ',
-    welcome: 'Bienvenido! escoje un Algoritmo',
+    welcome: 'Bienvenido! Escoje un Algoritmo',
+    algoSelectPlaceholder: 'Escoge uno',
     algorithms: {
       selectionSort: 'Orden por selección',
       bubbleSort: 'Orden de burbuja',

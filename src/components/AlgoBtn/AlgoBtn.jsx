@@ -26,7 +26,9 @@ const AlgoSelector = ({ selecting , tools }) => {
         className='algo-select' 
         value={global.algorithm} 
         onChange={handleChange}
+        defaultValue=''
       >
+        <option value='' hidden>{lang.algoSelectPlaceholder}</option>
         {algoList.map( algoName =>{
           return <option key={algoName} value={algoName}>{lang.algorithms[algoName]}</option>
         })}
