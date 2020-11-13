@@ -9,6 +9,9 @@
   clip-path: polygon(70% 13%, 70% 0%, 100% 25%, 70% 50%, 70% 37%, 0% 37%, /*Upper Arrow*/
   0% 75%, 30% 50%, 30% 63%, 100% 63%, 100% 87%, 30% 87%, 30% 100%, 0% 75%, /*Bottom Arrow*/
   0% 13% );    
+  -webkit-clip-path: polygon(70% 13%, 70% 0%, 100% 25%, 70% 50%, 70% 37%, 0% 37%, /*Upper Arrow*/
+  0% 75%, 30% 50%, 30% 63%, 100% 63%, 100% 87%, 30% 87%, 30% 100%, 0% 75%, /*Bottom Arrow*/
+  0% 13% );    
 }
 .size-icon:hover{
   animation: 1.2s moving-arrows infinite;
@@ -16,6 +19,7 @@
 .speed-icon{
   background: linear-gradient(180deg, #82B53E 0%, #A9D154 100%);
   clip-path: polygon(30% 100% , 50% 30% , 70% 100%);
+  -webkit-clip-path: polygon(30% 100% , 50% 30% , 70% 100%);
   transform-origin: bottom;
   transition: transform 200ms ease-in-out;
   transform: rotateX(-45deg)
