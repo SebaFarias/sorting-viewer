@@ -1,20 +1,42 @@
-import React , {useContext} from 'react'
+import React , {useContext , useEffect } from 'react'
 import {GlobalContext} from '../../globalContext'
 import './rangeHud.css'
 
 const RangeHud = ({ level , text , control }) => {
 
-const [ global , controller ] = useContext(GlobalContext) 
+const controller = useContext(GlobalContext)[1] 
 
-const handleclick = event => {
+useEffect( () => {
+  document.addEventListener('touchstart', handleTouchStart)
+  document.addEventListener('mousedown', handleTouchStart)
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart)
+      document.removeEventListener('mousedown', handleTouchStart)
+    }
+}) 
+
+const handleTouchStart = () => {
+  document.addEventListener('touchmove',hanldeNewValue)
+  document.addEventListener('touchend',listenEnd)
+  document.addEventListener('mousemove',hanldeNewValue)
+  document.addEventListener('mouseup',listenEnd)
+}
+const listenEnd = () => {
+  document.removeEventListener('touchmove',hanldeNewValue)
+  document.removeEventListener('touchend',listenEnd)
+  document.removeEventListener('mousemove',hanldeNewValue)
+  document.removeEventListener('mouseup',listenEnd)
+}
+const hanldeNewValue = event => {
   const rect = document.querySelector('.fill').getBoundingClientRect();
-  const percentage = 100 * (event.clientX - rect.left) / (rect.right - rect.left)
-  controller.setSliderValue( control , percentage );
-  
+  let percentage = 100 * (event.pageX - rect.left) / (rect.right - rect.left)
+  if(percentage > 100) percentage = 100
+  if(percentage < 0) percentage = 1
+  controller.setSliderValue( control , percentage );  
 }
 
   return(
-    <div className={`${control}-screen`} id={`${control}Screen`} onClick={handleclick}>
+    <div className={`${control}-screen`} id={`${control}Screen`}>
       <div 
         className={`${control} background`}
         style = {{
