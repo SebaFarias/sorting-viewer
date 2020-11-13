@@ -17,13 +17,19 @@ const handleclick = event => {
     <div className={`${control}-screen`} id={`${control}Screen`} onClick={handleclick}>
       <div 
         className={`${control} background`}
-        style = {{clipPath: `polygon(${level}% 0% , 100% 0% , 100% 100% , ${level}% 100%)`}}
+        style = {{
+          clipPath: `polygon(${level}% 0% , 100% 0% , 100% 100% , ${level}% 100%)`,
+          webKitClipPath: `polygon(${level}% 0% , 100% 0% , 100% 100% , ${level}% 100%)`
+        }}
         >
         {text}
       </div>
       <div 
         className={`${control} fill`}
-        style = {{clipPath: `polygon(0% 0% , ${level}% 0% , ${level}% 100% , 0% 100%)`}}
+        style = {{
+          clipPath: `polygon(0% 0% , ${level}% 0% , ${level}% 100% , 0% 100%)`,
+          webkitClipPath: `polygon(0% 0% , ${level}% 0% , ${level}% 100% , 0% 100%)`,
+        }}
       >
         {text}
       </div>
