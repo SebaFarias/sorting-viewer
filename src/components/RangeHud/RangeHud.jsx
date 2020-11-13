@@ -1,10 +1,11 @@
-import React , {useContext , useEffect } from 'react'
+import React , {useContext , useEffect, useRef } from 'react'
 import {GlobalContext} from '../../globalContext'
 import './rangeHud.css'
 
 const RangeHud = ({ level , text , control }) => {
 
 const controller = useContext(GlobalContext)[1] 
+const ref = useRef(null)
 
 useEffect( () => {
   document.addEventListener('touchstart', handleTouchStart)
@@ -15,28 +16,32 @@ useEffect( () => {
     }
 }) 
 
-const handleTouchStart = () => {
-  document.addEventListener('touchmove',hanldeNewValue)
-  document.addEventListener('touchend',listenEnd)
-  document.addEventListener('mousemove',hanldeNewValue)
-  document.addEventListener('mouseup',listenEnd)
+const handleTouchStart = event => {
+  if(ref.current && ref.current.contains(event.target)){
+    document.addEventListener('touchmove',hanldeNewValue)
+    document.addEventListener('touchend',stopUpdating)
+    document.addEventListener('mousemove',hanldeNewValue)
+    document.addEventListener('mouseup',stopUpdating)
+  }
 }
-const listenEnd = () => {
+const stopUpdating = () => {
   document.removeEventListener('touchmove',hanldeNewValue)
-  document.removeEventListener('touchend',listenEnd)
+  document.removeEventListener('touchend',stopUpdating)
   document.removeEventListener('mousemove',hanldeNewValue)
-  document.removeEventListener('mouseup',listenEnd)
+  document.removeEventListener('mouseup',stopUpdating)
 }
 const hanldeNewValue = event => {
-  const rect = document.querySelector('.fill').getBoundingClientRect();
+  event.preventDefault()
+  event.stopImmediatePropagation()
+  const rect = document.querySelector('.fill').getBoundingClientRect()
   let percentage = 100 * (event.pageX - rect.left) / (rect.right - rect.left)
   if(percentage > 100) percentage = 100
   if(percentage < 0) percentage = 1
-  controller.setSliderValue( control , percentage );  
+  controller.setSliderValue( control , percentage )
 }
 
   return(
-    <div className={`${control}-screen`} id={`${control}Screen`}>
+    <div ref={ref} className={`${control}-screen`} id={`${control}Screen`}>
       <div 
         className={`${control} background`}
         style = {{
