@@ -8,10 +8,10 @@ const controller = useContext(GlobalContext)[1]
 const ref = useRef(null)
 
 useEffect( () => {
-  document.addEventListener('touchstart', handleTouchStart)
+  document.addEventListener('touchstart', handleTouchStart,{passive: false})
   document.addEventListener('mousedown', handleTouchStart)
     return () => {
-      document.removeEventListener('touchstart', handleTouchStart,{passive: false})
+      document.removeEventListener('touchstart', handleTouchStart)
       document.removeEventListener('mousedown', handleTouchStart)
     }
 }) 
