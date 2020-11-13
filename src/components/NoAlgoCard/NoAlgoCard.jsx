@@ -9,7 +9,7 @@ const NoAlgoCard = ({ target, before}) => {
   const handleClick = () => {
     const targetElement = document.getElementById(target)
     if(targetElement){
-      return targetElement.click()
+      return targetElement.click() //this is not working as expected with the algorithm <select> element
     }
       document.getElementById(before).click()
   }

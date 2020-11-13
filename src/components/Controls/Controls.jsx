@@ -109,7 +109,7 @@ const Controls = () => {
     },
   }
   return(
-    <section style={{height: `${window.innerWidth>600?window.innerHeight/2:0.4*window.innerHeight}px`}}>
+    <section>
       <article className="left-controls" ref={leftRef}>
         <SizeBtn selecting ={using.sizeBtn} tools= {controlsManager}/>
         <AlgoBtn selecting ={using.algoBtn} tools= {controlsManager}/>

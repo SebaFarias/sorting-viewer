@@ -2,6 +2,7 @@ section{
   display: flex;
   align-items: center;
   margin-top: auto;
+  height: 20vh;  
 }
 .left-controls,.right-controls{
   width: min(40vw,500px);
