@@ -66,3 +66,11 @@
   width: calc(15vmin - 0.5em); 
   transition: all 500ms;
 }
+/* .contract>.range.size{
+  left: max(-40vw + .75rem ,-500px + .75rem);
+  transition: all 500ms;
+}
+{
+  right: max(-40vw + .75rem ,-500px + .75rem);
+  transition: all 500ms;
+} */

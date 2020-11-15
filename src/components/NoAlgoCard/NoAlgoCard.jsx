@@ -10,7 +10,7 @@ const NoAlgoCard = ({ target, before}) => {
     const targetEl = document.getElementById(target)
     document.getElementById(before).click()
     if(targetEl){
-      targetEl.size = Object.keys(lang.algorithms).length //this is not working as expected with the algorithm <select> element
+      targetEl.click()//this is not working as expected with the algorithm <select> element
     }
     else{
       handleClick()
