@@ -11,6 +11,7 @@ const ENGLISH = {
       bubbleSort: 'Bubble sort',
       insertionSort: 'Insertion sort',
     },
+    restart: 'restart',
     run:{
       true: 'Pause',
       false: 'Run'
@@ -29,6 +30,7 @@ const ENGLISH = {
       bubbleSort: 'Orden de burbuja',
       insertionSort: 'Orden por inserción',
     },
+    restart: 'reiniciar',
     run:{
       true: 'Pausar',
       false: 'Ordenar'

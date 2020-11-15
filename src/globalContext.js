@@ -92,23 +92,23 @@ export const GlobalProvider = (props) => {
       controller.setSize(Math.round( value * (MAX_ARRAY_SIZE - MIN_ARRAY_SIZE)/100 ) + MIN_ARRAY_SIZE)
     },
     setAlgo: newAlgo => {
-      initialize(newAlgo , state.size)
+      controller.initialize(newAlgo , state.size)
     },
-  }
-  const initialize = ( algo , size ) => {
-    setState( prevState => {
-      if(!algo) return prevState
-      const [ newBars , newIndexes] = Model[algo].initial(size)
-      return {
-        ...prevState,
-        algorithm: algo,
-        bars: newBars,
-        indexes: newIndexes,
-        initialArray: newBars,
-        steps: 0,
-        sorted: false,
-      }
-    })
+    initialize : ( algo , size ) => {
+      setState( prevState => {
+        if(!algo) return prevState
+        const [ newBars , newIndexes] = Model[algo].initial(size)
+        return {
+          ...prevState,
+          algorithm: algo,
+          bars: newBars,
+          indexes: newIndexes,
+          initialArray: newBars,
+          steps: 0,
+          sorted: false,
+        }
+      })
+    },
   }
   const stepForward = () => {
     setState( prevState => {
