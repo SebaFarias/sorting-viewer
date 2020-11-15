@@ -8,13 +8,8 @@ const NoAlgoCard = ({ target, before}) => {
 
   const handleClick = () => {
     const targetEl = document.getElementById(target)
-    document.getElementById(before).click()
-    if(targetEl){
-      targetEl.click()//this is not working as expected with the algorithm <select> element
-    }
-    else{
-      handleClick()
-    }
+    if(targetEl) return targetEl.click() //this is not working as expected with the algorithm <select> element
+      document.getElementById(before).click()
   }
   return(
     <div id="noAlgoCard" className="no-algo-card" onClick={handleClick}>
