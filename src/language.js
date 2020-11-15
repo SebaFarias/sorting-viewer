@@ -3,7 +3,7 @@ import React from 'react'
 const LANGUAGE_KEY = 'ENGLISH';
 const ENGLISH = { 
     title: 'Sorting Algorithms',
-    subtitle: 'Coosen algorithm: ',
+    subtitle: 'Choosen algorithm: ',
     welcome: 'Welcome! Choose an Algorithm',
     algoSelectPlaceholder: 'Choose one',
     algorithms: {

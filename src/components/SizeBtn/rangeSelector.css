@@ -1,3 +1,8 @@
+#sizeSelector{
+  position: absolute;
+  top:0;
+  left: .5rem;
+}
 .size-icon,
 .speed-icon{
   height: 6.8vmin;
@@ -38,9 +43,80 @@
     transform: scale(1,1)  
   }
 }
-.range {
-  width: min(40vw - .75rem,500px - .75rem);
+.range{
+  position: absolute;
+  bottom: 0;
+  width: min(40vw + .5rem + 4px,500px + .5rem + 4px);
   margin-top: -.5rem;
   -webkit-appearance: none;
-  background: transparent; /* Otherwise white in Chrome */
+  background: transparent; 
 }
+.range::-webkit-slider-thumb{
+  -webkit-appearance: none;
+}
+.range::-ms-track{
+  width: 100%;
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+.range::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 4vmin;
+  width: 4vmin;
+  border-radius: 2vmin;
+  cursor: pointer;
+  box-shadow: 0 3px 3px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+.range::-moz-range-thumb{
+  box-shadow: 0 3px 3px  #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 4vmin;
+  width: 4vmin;
+  border-radius: 2vmin;
+  cursor: pointer;
+}
+.range::-ms-thumb{
+  box-shadow: 0 3px 3px  #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 4vmin;
+  width: 4vmin;
+  border-radius: 2vmin;
+  cursor: pointer;
+}
+.range.speed{
+  right: -0.75rem;
+}
+.range.size{
+  left: -0.75rem;
+}
+.range.speed::-webkit-slider-thumb{
+  background: radial-gradient(100% 100% at 50% 0%, #6DFF33 6.74%, #44FF00 62.32%, #0E3300 90.1%);
+  border: 2px solid #252B3B;
+}
+.range.speed::-moz-range-thumb{
+  background: radial-gradient(100% 100% at 50% 0%, #6DFF33 6.74%, #44FF00 62.32%, #0E3300 90.1%);
+  border: 2px solid #252B3B;
+}
+.range.speed::-ms-thumb{
+  background: radial-gradient(100% 100% at 50% 0%, #6DFF33 6.74%, #44FF00 62.32%, #0E3300 90.1%);
+  border: 2px solid #252B3B;
+}
+.range.size::-webkit-slider-thumb{
+  background: radial-gradient(100% 100% at 50% 0%, #E6F53D 6.74%, #DFF20D 62.32%, #2D3003 90.1%);
+  border: 2px solid #252B3B;
+}
+.range.size::-moz-range-thumb{
+  background: radial-gradient(100% 100% at 50% 0%, #E6F53D 6.74%, #DFF20D 62.32%, #2D3003 90.1%);
+  border: 2px solid #252B3B;
+}
+.range.size::-ms-thumb{
+  background: radial-gradient(100% 100% at 50% 0%, #E6F53D 6.74%, #DFF20D 62.32%, #2D3003 90.1%);
+  border: 2px solid #252B3B;
+}
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+

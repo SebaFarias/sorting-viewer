@@ -46,8 +46,9 @@ const defaultColors = (array, selected, i, j) => {
 }
 const swapColors = (array, selected, i) => {
     return swap(array,selected,i).map( (bar,index) => {
-      bar.state = index <= i ? 'sorted' : 'new'
+      bar.state = index < i ? 'sorted' : 'new'
       if( index == i+1) bar.state = 'inspecting'
+      if( index == i) bar.state = 'selected'
       return bar
     })
 }

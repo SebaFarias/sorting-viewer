@@ -1,7 +1,7 @@
 .size-screen,
 .speed-screen{
   position: relative;
-  width: min(40vw,500px);
+  width: min(40vw - .75rem + 4px,500px - .75rem + 4px);
   height: 15vmin; 
 }
 .background,
@@ -14,10 +14,10 @@
 .fill{
   position: absolute;
   top: .25rem;
-  width: min(40vw - .75rem,500px - .75rem);
+  width: min(40vw - .75rem ,500px - .75rem);
   height: calc(15vmin - .75rem); 
   border-radius: 200px;
-  border: 2px solid #29292F;
+  border: 2px solid #aaa;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 10vmin;
@@ -30,26 +30,35 @@
   user-select: none;
 }
 .background{
-  background-color: darkslategrey;
+  background: linear-gradient(180deg, #2F4F4F 0%, #4C8080 34.38%, #264040 49.48%, #132020 85.94%, #0A1010 100%);
 }
 .size.background{
-  color: yellowgreen;
+  color: #E8FC03;
+  box-shadow: 0px 0px 15px 10px rgba(232, 252, 3, 0.45);
+  -moz-box-shadow: 0px 0px 15px 10px rgba(232, 252, 3, 0.45);
+  -webkit-box-shadow: 0px 0px 15px 10px rgba(232, 252, 3, 0.45);
 }
-.size.background,
-.size.fill{
-  left: .5rem;
+.speed.background{
+  color: #44FF00;
+  box-shadow: 0px 0px 15px 10px rgba(105, 255, 51, 0.45);
+  -moz-box-shadow: 0px 0px 15px 10px rgba(105, 255, 51, 0.45);
+  -webkit-box-shadow: 0px 0px 15px 10px rgba(105, 255, 51, 0.45);
+  right: 0;
 }
-.speed.background,
 .speed.fill{
-  right: .5rem;
-}
-.speed.fill{
-  background-color: limegreen;
-  color: darkslategrey;
+  background: linear-gradient(180deg, #44FF00 0%, #69FF33 34.38%, #299900 50%, #0E3300 83.85%, #071A00 100%);
+  box-shadow: 0px 0px 15px 10px rgba(105, 255, 51, 0.45);
+  -moz-box-shadow: 0px 0px 15px 10px rgba(105, 255, 51, 0.45);
+  -webkit-box-shadow: 0px 0px 15px 10px rgba(105, 255, 51, 0.45);
+  color: #122132;
+  right: 0;
 }
 .size.fill{
-  background-color: yellowgreen;
-  color: darkslategrey;
+  background: linear-gradient(180deg, #E8FC03 0%, #EDFD35 37%, #8B9702 47%, #2E3201 83.85%, #171900 100%);
+  box-shadow: 0px 0px 15px 10px rgba(232, 252, 3, 0.45);
+  -moz-box-shadow: 0px 0px 15px 10px rgba(232, 252, 3, 0.45);
+  -webkit-box-shadow: 0px 0px 15px 10px rgba(232, 252, 3, 0.45);
+  color: #122132;
 }
 .contract>.background,
 .contract>.fill,

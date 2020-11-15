@@ -1,10 +1,12 @@
 .no-algo-card{
-  padding: 1.5rem 1rem;
-  border-radius: 2vmin;
+  padding: 2rem 1.5rem;
+  border-radius: 7vmin;
   cursor: pointer;
   margin: auto;
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: center;
   animation: appear-up 1.2s;
   border: rgb(230, 230, 250) 1px solid;
   -webkit-box-shadow: 0px 5px 15px  rgba(20,20,20,.85);

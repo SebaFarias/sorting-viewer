@@ -6,7 +6,6 @@ const RangeHud = ({ level , text , control }) => {
 
 const controller = useContext(GlobalContext)[1] 
 const ref = useRef(null)
-
 useEffect( () => {
   document.addEventListener('touchstart', handleTouchStart,{passive: false})
   document.addEventListener('mousedown', handleTouchStart)
@@ -20,6 +19,7 @@ const handleTouchStart = event => {
   if(ref.current && ref.current.contains(event.target)){
     event.preventDefault()
     event.stopImmediatePropagation()
+    hanldeNewValue(event)
     document.addEventListener('touchmove',hanldeNewValue,{passive: false})
     document.addEventListener('touchend',stopUpdating)
     document.addEventListener('mousemove',hanldeNewValue)
@@ -35,7 +35,7 @@ const stopUpdating = () => {
 const hanldeNewValue = event => {
   event.preventDefault()
   event.stopImmediatePropagation()
-  const pos = event.pageX || event.clientX || event.changedTouches[0].clientX
+  const pos = event.pageX || event.touches[0].pageX
   const rect = document.querySelector('.fill').getBoundingClientRect()
   let percentage = 100 * (pos - rect.left) / (rect.right - rect.left)
   if(percentage > 100) percentage = 100
@@ -48,8 +48,8 @@ const hanldeNewValue = event => {
       <div 
         className={`${control} background`}
         style = {{
-          clipPath: `polygon(${level}% 0% , 100% 0% , 100% 100% , ${level}% 100%)`,
-          webKitClipPath: `polygon(${level}% 0% , 100% 0% , 100% 100% , ${level}% 100%)`
+          clipPath: `polygon(${level}% -50% , 150% -50% , 150% 150% , ${level}% 150%)`,
+          webKitClipPath: `polygon(${level}% -50% , 150% -50% , 150% 150% , ${level}% 150%)`
         }}
         >
         {text}
@@ -57,8 +57,8 @@ const hanldeNewValue = event => {
       <div 
         className={`${control} fill`}
         style = {{
-          clipPath: `polygon(0% 0% , ${level}% 0% , ${level}% 100% , 0% 100%)`,
-          webkitClipPath: `polygon(0% 0% , ${level}% 0% , ${level}% 100% , 0% 100%)`,
+          clipPath: `polygon(-50% -50% , ${level}% -50% , ${level}% 150% , -50% 150%)`,
+          webkitClipPath: `polygon(-50% -50% , ${level}% -50% , ${level}% 150% , -50% 150%)`,
         }}
       >
         {text}

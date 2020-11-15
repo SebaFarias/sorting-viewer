@@ -1,8 +1,8 @@
 import React, {useState , createContext} from 'react'
 import Model , { resize }from './Model/model'
 
-const INITIAL_SIZE = 20
-const INITIAL_SPEED = 200  //In milliseconds
+const INITIAL_SIZE = 30
+const INITIAL_SPEED = 800  //In milliseconds
 const MAX_ARRAY_SIZE = 60
 const MIN_ARRAY_SIZE = 6
 const MAX_MS_BETWEEN_STEP = 1000
