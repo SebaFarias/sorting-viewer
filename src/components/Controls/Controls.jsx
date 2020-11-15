@@ -23,7 +23,7 @@ const Controls = () => {
     const handleClickOutside = event => {
       if( (using.sizeBtn || using.algoBtn) && leftRef.current && !leftRef.current.contains(event.target)){
         if(using.sizeBtn) controlsManager.closeSize()
-        if(using.algoBtn && !document.getElementById('noAlgoCard').contains(event.target)) controlsManager.closeAlgo()
+        if(using.algoBtn && !document.getElementById('noAlgoCard')) controlsManager.closeAlgo()
         if(event.target === document.getElementById('speedBtn')) controlsManager.openSpeed()
       }
       if( using.speedBtn && rightRef.current && !rightRef.current.contains(event.target)){
