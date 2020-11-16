@@ -1,13 +1,17 @@
 # ToDo
-[ ] Controls
- - [ ] Play
- - [ ] More / Less bars
- - [ ] Sorting speed
- - [ ] Sorting Algorithm
-
-[ ] Algorithms
-- [ ] Choose wich ones  
-- [ ] Implement thoose  
+[X] Controls
+ - [X] Play
+ - [X] More / Less bars
+ - [X] Sorting speed
+ - [X] Sorting Algorithm
+[ ] Separar el controlador en un Controlador global y un controlador de algoritmos de Orden
+[ ] Implementar Step pa delante y pa atrás
+[ ] Header
+ - [ ] Ponerle fondo sólido
+ - [ ] Nuevo estilo al Language Toggler
+ - [ ] Agregar menú desplegable para settings
+ - [ ] Subir el selector de algoritmos para acá
+ - [ ] Implementar la apertura del AlgoSelector
 
 ### N^2
 - [X] Bubble Sort
@@ -22,7 +26,10 @@
 - [ ] Introsort
 
 
-
+# Buttons
+https://codepen.io/wallas/pen/lFABr
+https://codepen.io/codeandcam/pen/AmtvB
+https://codepen.io/savelyenne/pen/ogvmPz
 # Input: Range
 Styling basics: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
 Styling tool: http://danielstern.ca/range.css/#/
@@ -77,26 +84,3 @@ Complete list : https://www.geeksforgeeks.org/sorting-algorithms/
 }
 
 
-Contexto para tener un estado Global de:
-
-Sorted
-Run
-Speed
-Size
-Algorithm
-Array
-indexes
-selecting
-
-Qizás no tan necesario:
-  Separar bars en BarsContainer(1) y bars(2)
-  (1) Se encarga de guardar un estado y gestionarlo (actualizarlo, etc...)
-  (2) Solo se encarga de mostrar lo que le entrega el BarsContainer
-
-
-
-Support para Safari:
-
-[X] Clip-path: Agregar vendor prefix -webkit-
-[ ] OnMouseDown: Revisar eventos touch https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
-[X] Tamaño del Viewport: css de Bars en 40 o 45 vh y en 50 solo con un media query de unos min-width = 600px
