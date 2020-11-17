@@ -46,6 +46,7 @@ section{
   height: calc(15vmin - 0.5em);
   padding: 0;
   margin: auto;
+  cursor: pointer;
   border-radius: 50%;
   background: #F4F4F6;
   box-shadow: inset 0px 0px 6px 3px rgba(0, 0, 0, 0.25);

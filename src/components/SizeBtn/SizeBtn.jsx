@@ -45,7 +45,7 @@ const SizeBtn = ({ selecting , tools }) => {
         className='size btn' name='size button'
         onClick={handleButtonClick}
       >
-        <div className='size-icon'></div>
+        {<div className='size-icon'>{global.size}</div>}
       </button>
     }
     </div>

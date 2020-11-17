@@ -1,8 +1,28 @@
-.algo-icon{
+.fullscreen-icon{
   height: 4.5vmin;
   width: 4.5vmin;
   margin: auto;
-  clip-path: polygon(0% 0%, 40% 0%, 40% 40%, 60% 40%, 60% 0%, 100% 0%, 100% 40%, 60% 40%, 60% 60%, 100% 60%, 100% 100%, 60% 100%, 60% 60%, 40% 60%, 40% 100%, 0% 100%, 0% 60%, 40% 60%, 40% 40%, 0% 40%);
-  -webkit-clip-path: polygon(0% 0%, 40% 0%, 40% 40%, 60% 40%, 60% 0%, 100% 0%, 100% 40%, 60% 40%, 60% 60%, 100% 60%, 100% 100%, 60% 100%, 60% 60%, 40% 60%, 40% 100%, 0% 100%, 0% 60%, 40% 60%, 40% 40%, 0% 40%);
-  border: solid 1vmin #1f928b ;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+.corner{
+  height: 2.25vmin;
+  width: 2.25vmin;
+  background: lightseagreen;
+  transition: all 500ms ease-in-out;
+  clip-path: polygon(84% 0%, 84% 28%, 28% 28%, 28% 84%, 0% 84%, 0% 0%);
+  -webkit-clip-path: polygon(84% 0%, 84% 28%, 28% 28%, 28% 84%, 0% 84%, 0% 0%);
+}
+.on{
+  clip-path: polygon(56% 0%, 84% 0%, 84% 84%, 0% 84%, 0% 56%, 56% 56%);
+  -webkit-clip-path: polygon(56% 0%, 84% 0%, 84% 84%, 0% 84%, 0% 56%, 56% 56%);
+}
+.corner:nth-child(2n){
+  transform: rotate(90deg);
+}
+.corner:nth-child(3n){
+  transform: rotate(-90deg);
+}
+.corner:last-child{
+  transform: rotate(180deg);
 }

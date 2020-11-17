@@ -32,3 +32,16 @@ body{
     height: 20vh;
   }
 }
+@media (display-mode: fullscreen) {
+  header{
+    margin-bottom: auto;
+    height: 20vh;
+  }
+  .bars{
+    height: 55vh;
+  }
+  section{
+    margin-top: auto;
+    height: 20vh;
+  }
+}

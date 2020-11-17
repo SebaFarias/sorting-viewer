@@ -54,6 +54,12 @@ export const GlobalProvider = (props) => {
         }  
       })
     },
+    setFullScreen: newState => {
+      setState( prevState => {
+        return{...prevState,
+        fullscreen:newState}
+      })
+    },
     toggleFullScreen: () => {
       setState( prevState => {
         if(prevState.fullscreen) {
