@@ -6,6 +6,7 @@ section{
   height: 20vh;  
 }
 .left-controls,.right-controls{
+  width: 40vw; /*For Xiaomi´s Browser*/
   width: min(40vw,500px);
   height: 15vmin;  
   padding: 0.25em;
@@ -86,7 +87,7 @@ section{
 .size.using>.label{
   left: 0;
 }
-.algo>.label,
+.fullscreen>.label,
 .speed>.label{
   right: -50%;
 }

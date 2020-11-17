@@ -4,6 +4,7 @@ import {GlobalProvider} from './globalContext'
 import Header from './components/Header/Header'
 import Bars from './components/Bars/Bars'
 import Controls from './components/Controls/Controls'
+import SettingsBar from './components/SettingsBar/SettingsBar'
 import './style.css'
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           eng={english} 
           toggleLng={toggleLanguage} 
         />
+        <SettingsBar/>
         <Bars/>
         <Controls/>
       </ GlobalProvider>

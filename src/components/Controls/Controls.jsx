@@ -1,7 +1,7 @@
 import React , {useState, useRef, useEffect} from 'react'
 import './controls.css'
 import RunBtn from '../RunBtn/RunBtn'
-import AlgoBtn from '../AlgoBtn/AlgoBtn'
+import FullscreenBtn from '../FullscreenBtn/FullscreenBtn'
 import SpeedBtn from '../SpeedBtn/SpeedBtn'
 import SizeBtn from '../SizeBtn/SizeBtn'
 
@@ -58,15 +58,15 @@ const Controls = () => {
     closeSpeed: () => {
       document.getElementById('speedScreen').classList.add('contract')
       document.getElementById('speedSelector').parentElement.classList.remove('using')
-          setTimeout(() => {
-            show('sizeBtn')
-            setUsing( prevState => {
-              return {
-                ...prevState,
-                speedBtn: false
-              }
-            })
-          },CONTRACT_ANIMATION_TIME)
+      setTimeout(() => {
+        show('sizeBtn')
+        setUsing( prevState => {
+          return {
+            ...prevState,
+            speedBtn: false
+          }
+        })
+      },CONTRACT_ANIMATION_TIME)
     },
     closeSize: () => {
       document.getElementById('sizeScreen').classList.add('contract')
@@ -86,7 +86,7 @@ const Controls = () => {
     <section>
       <article className="left-controls">
         <RunBtn />
-        <AlgoBtn selecting ={using.algoBtn} tools= {controlsManager}/>
+        <FullscreenBtn />
       </article>
       <article className="right-controls" ref={rightRef}>
         <SizeBtn selecting ={using.sizeBtn} tools= {controlsManager}/>

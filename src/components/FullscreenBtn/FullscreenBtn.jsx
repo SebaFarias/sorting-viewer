@@ -3,7 +3,7 @@ import LanguageContext from '../../language'
 import {GlobalContext} from '../../globalContext'
 import './fullScreenBtn.css'
 
-const AlgoSelector = () => {
+const FullscreenBtn = () => {
 
   const lang = useContext(LanguageContext)
   const controller  = useContext(GlobalContext)[1]
@@ -23,12 +23,12 @@ const AlgoSelector = () => {
   
   
   return(
-    <div className='control algo'>
-      <label className='label' htmlFor='algoBtn'>{ lang.algo }</label>      
+    <div className='control fullscreen'>
+      <label className='label' htmlFor='fullscreenBtn'>{ lang.fullscreen }</label>      
       <button 
-        id='algoBtn' 
-        className='algo btn' 
-        name='algo button' 
+        id='fullscreenBtn' 
+        className='fullscreen btn' 
+        name='fullscreen button' 
         onClick={handleButtonClick}
       >
         <div className= 'fullscreen-icon'>
@@ -42,4 +42,4 @@ const AlgoSelector = () => {
   )
 }
 
-export default AlgoSelector
+export default FullscreenBtn

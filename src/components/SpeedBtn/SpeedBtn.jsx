@@ -47,7 +47,10 @@ const SpeedBtn = ({ selecting , tools }) => {
       aria-checked = {selecting}
       onClick = {handleButtonClick}
     >
-      <div className='speed-icon'></div>
+      <div 
+        className='speed-icon'
+        style={{transform: `rotate(${( 20 / global.speed)*140 - 70}deg)`}}
+      ></div>
     </button>  
       }
     </div>

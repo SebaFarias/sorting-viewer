@@ -18,7 +18,7 @@ const ENGLISH = {
     },
     size: 'Length',
     speed: 'Speed',
-    algo: 'Fullscreen',
+    fullscreen: 'Fullscreen',
   };
   const ESPANOL = {  
     title: 'Algoritmos de Orden',
@@ -37,7 +37,7 @@ const ENGLISH = {
     },
     size: 'Cantidad',
     speed: 'Velocidad',
-    algo: 'Pantalla',
+    fullscreen: 'Pantalla',
   };
   
   const Language = {

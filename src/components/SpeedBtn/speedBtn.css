@@ -3,11 +3,17 @@
   top:0;
   right: .5rem;
 }
+#speedBtn{
+  background: url('../../../assets/speed.svg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .speed-icon{
   background: linear-gradient(180deg, #82B53E 0%, #A9D154 100%);
   clip-path: polygon(30% 100% , 50% 30% , 70% 100%);
   -webkit-clip-path: polygon(30% 100% , 50% 30% , 70% 100%);
   transform-origin: bottom;
   transition: transform 200ms ease-in-out;
-  transform: rotateX(-45deg)
 }

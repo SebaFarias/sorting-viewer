@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import Bar from '../Bar/Bar'
+import React, { useContext, useEffect, useState } from 'react'
 import {GlobalContext} from '../../globalContext'
 import NoAlgoCard from '../NoAlgoCard/NoAlgoCard'
 import './bars.css'
@@ -16,7 +15,7 @@ const Bars = () => {
 
   return(
     <main className="bars" onClick={restart}>
-      {!global.algorithm? <NoAlgoCard target='algoSelector' before='algoBtn'/> : global.bars.map( bar => {
+      {!global.algorithm? <NoAlgoCard/> : global.bars.map( bar => {
         return <Bar key={bar.hash} situation={bar.state} height={bar.heigth}/>
       })}
       {global.sorted? 
@@ -27,4 +26,31 @@ const Bars = () => {
     </main>
   )
 }
+
+const Bar = ({ situation, height }) => {
+
+  const [radius , setRadius] = useState(undefined)
+  const global = useContext(GlobalContext)[0]  
+
+  useEffect(() => {
+    const handleResize = () => {
+      const barWidth = Math.min(( 0.83572 * window.innerWidth - 14.8)/ global.size , 80)
+      setRadius(barWidth / 3)
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, [global.size]); 
+
+  const barStyle = {
+    borderRadius: `${radius}px ${radius}px 0 0`,
+    height : `${height}%`,
+  }
+
+  return(
+    <div className={`bar ${situation}`} style={barStyle}>
+    </div>
+  )
+}
+
 export default Bars

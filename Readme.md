@@ -11,7 +11,7 @@
  - [X] Nuevo estilo al Language Toggler
  - [ ] Agregar menú desplegable para settings
  - [X] Subir el selector de algoritmos para acá
- - [ ] Implementar la apertura del AlgoSelector
+ - [X] Implementar la apertura del AlgoSelector
 
 ### N^2
 - [X] Bubble Sort

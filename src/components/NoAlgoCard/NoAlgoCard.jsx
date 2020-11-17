@@ -2,14 +2,13 @@ import React , {useContext} from 'react'
 import LangContext from '../../language'
 import './noAlgoCard.css'
 
-const NoAlgoCard = ({ target, before}) => {
+const NoAlgoCard = () => {
 
   const lang = useContext(LangContext)
 
   const handleClick = () => {
-    const targetEl = document.getElementById(target)
-    if(targetEl) return targetEl.click() //this is not working as expected with the algorithm <select> element
-      document.getElementById(before).click()
+    const algoList = Object.keys(lang.algorithms)
+    document.getElementById('algoSelector').size = algoList.length    
   }
   return(
     <div id="noAlgoCard" className="no-algo-card" onClick={handleClick}>
