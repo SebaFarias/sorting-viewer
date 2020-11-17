@@ -7,10 +7,10 @@
 [ ] Separar el controlador en un Controlador global y un controlador de algoritmos de Orden
 [ ] Implementar Step pa delante y pa atrás
 [ ] Header
- - [ ] Ponerle fondo sólido
- - [ ] Nuevo estilo al Language Toggler
+ - [X] Ponerle fondo sólido
+ - [X] Nuevo estilo al Language Toggler
  - [ ] Agregar menú desplegable para settings
- - [ ] Subir el selector de algoritmos para acá
+ - [X] Subir el selector de algoritmos para acá
  - [ ] Implementar la apertura del AlgoSelector
 
 ### N^2
