@@ -1,6 +1,5 @@
-import React , {useState, useRef, useEffect, useContext} from 'react'
+import React , {useState, useRef, useEffect} from 'react'
 import './controls.css'
-import {GlobalContext} from '../../globalContext'
 import RunBtn from '../RunBtn/RunBtn'
 import AlgoBtn from '../AlgoBtn/AlgoBtn'
 import SpeedBtn from '../SpeedBtn/SpeedBtn'
@@ -15,19 +14,13 @@ const Controls = () => {
     algoBtn: false,
     speedBtn: false,
   })
-  const global = useContext(GlobalContext)[0]
-  const leftRef = useRef(null)
   const rightRef = useRef(null)
 
   useEffect( () => {
     const handleClickOutside = event => {
-      if( (using.sizeBtn || using.algoBtn) && leftRef.current && !leftRef.current.contains(event.target)){
+      if( (using.speedBtn || using.sizeBtn) && rightRef.current && !rightRef.current.contains(event.target)){
         if(using.sizeBtn) controlsManager.closeSize()
-        if(using.algoBtn && !document.getElementById('noAlgoCard')) controlsManager.closeAlgo()
-        if(event.target === document.getElementById('speedBtn')) controlsManager.openSpeed()
-      }
-      if( using.speedBtn && rightRef.current && !rightRef.current.contains(event.target)){
-        controlsManager.closeSpeed()
+        if(using.speedBtn) controlsManager.closeSpeed()
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -43,7 +36,8 @@ const Controls = () => {
   }
   const controlsManager = {
     openSpeed: () => {
-      document.getElementById('runBtn').parentElement.classList.add('hide')
+      document.getElementById('sizeBtn').parentElement.classList.add('hide')
+      document.getElementById('speedBtn').parentElement.classList.add('using')
       setUsing( prevState => {
         return {
           ...prevState,
@@ -52,7 +46,8 @@ const Controls = () => {
       })
     },
     openSize: () => {      
-      document.getElementById('algoBtn').parentElement.classList.add('hide')
+      document.getElementById('speedBtn').parentElement.classList.add('hide')
+      document.getElementById('sizeBtn').parentElement.classList.add('using')
       setUsing( prevState => {
         return {
           ...prevState,
@@ -60,21 +55,11 @@ const Controls = () => {
         }
       })
     },
-    openAlgo: () => {      
-      document.getElementById('sizeBtn').parentElement.classList.add('hide')
-      document.getElementById('algoBtn').parentElement.classList.add('using')
-      setUsing( prevState => {
-        return {
-          ...prevState,
-          algoBtn: true
-        }
-      })
-    },
     closeSpeed: () => {
       document.getElementById('speedScreen').classList.add('contract')
       document.getElementById('speedSelector').parentElement.classList.remove('using')
           setTimeout(() => {
-            show('runBtn')
+            show('sizeBtn')
             setUsing( prevState => {
               return {
                 ...prevState,
@@ -87,7 +72,7 @@ const Controls = () => {
       document.getElementById('sizeScreen').classList.add('contract')
       document.getElementById('sizeSelector').parentElement.classList.remove('using')
           setTimeout(() => {
-            show('algoBtn')
+            show('speedBtn')
             setUsing( prevState => {
               return {
                 ...prevState,
@@ -96,28 +81,15 @@ const Controls = () => {
             })
           },CONTRACT_ANIMATION_TIME)
     },
-    closeAlgo: () => {
-      document.getElementById('algoSelector').classList.add('contract')
-      document.getElementById('algoSelector').parentElement.classList.remove('using')
-          setTimeout(() => {
-            show('sizeBtn')
-            setUsing( prevState => {
-              return {
-                ...prevState,
-                algoBtn: false
-              }
-            })
-          },CONTRACT_ANIMATION_TIME)
-    },
   }
   return(
     <section>
-      <article className="left-controls" ref={leftRef}>
-        <SizeBtn selecting ={using.sizeBtn} tools= {controlsManager}/>
+      <article className="left-controls">
+        <RunBtn />
         <AlgoBtn selecting ={using.algoBtn} tools= {controlsManager}/>
       </article>
       <article className="right-controls" ref={rightRef}>
-        <RunBtn />
+        <SizeBtn selecting ={using.sizeBtn} tools= {controlsManager}/>
         <SpeedBtn selecting ={using.speedBtn} tools= {controlsManager}/>
       </article>
     </section>

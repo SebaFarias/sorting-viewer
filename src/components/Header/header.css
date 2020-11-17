@@ -2,8 +2,12 @@ header{
   display: flex;
   height: 100%;
   flex-direction: column;
-  padding: 0;
   margin-bottom: 5vh;
+  padding: 1em var(--padding);
+  color: #888888;
+  background: linear-gradient(180deg, #C7C9D1 0%, #FFFFFF 25.52%, #E3E4E8 52.08%, #ABADBA 99.99%, #E1DFE2 100%);
+  box-shadow: 2px 1px 30px #000000;
+  border-radius: 0px 0px 12vmin 12vmin;
 }
 .toggler-container{
   margin-left: auto;

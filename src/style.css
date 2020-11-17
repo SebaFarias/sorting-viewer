@@ -14,7 +14,7 @@ body{
 }
 
 #root{
-  padding: 0em calc(8.214vw - 14.8px);
+  --padding: calc(8.214vw - 14.8px);
   color: rgb(230, 230, 250);
   font-family: 'Roboto', sans-serif;
   display: flex;

@@ -1,21 +1,21 @@
 import React from 'react'
 import './langToggler.css'
 
-const LangToggler = ({eng, toggle}) => {
+const LangToggler = ( { eng , toggle } ) => {
 
   return(
-    <div className="toggler-container" onClick={toggle}>
+    <div className="container">
       <button 
         className={eng?"indicator en":"indicator"}
         name="language toggler"
         type="button"
         role="switch"
         aria-checked={eng}
-      ></button>
-      <div className="labels">
-        <h4 style={eng?{color: 'rgb(220, 220, 250)'}:{color: 'rgb(100, 100, 110)'}}>EN</h4> 
-        <h4 style={eng?{color: 'rgb(100, 100, 110)'}:{color: 'rgb(220, 220, 250)'}}>ES</h4> 
-      </div>
+        onClick={toggle}
+        >
+        <h4 className={eng?'on':''}>EN</h4> 
+        <h4 className={eng?'':'on'}>ES</h4> 
+      </button>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 .bars{
+  padding: 0 var(--padding);
   display: flex;
   justify-content: center;
   height: 40vh;
