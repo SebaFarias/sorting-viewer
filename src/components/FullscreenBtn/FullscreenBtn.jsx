@@ -6,7 +6,7 @@ import './fullScreenBtn.css'
 const FullscreenBtn = () => {
 
   const lang = useContext(LanguageContext)
-  const controller  = useContext(GlobalContext)[1]
+  const [ global , controller ]  = useContext(GlobalContext)
 
   const handleButtonClick = () => {
     controller.toggleFullScreen()
@@ -19,7 +19,7 @@ const FullscreenBtn = () => {
     return () => {
       document.removeEventListener('fullscreenchange', checkFullScreen)
     }
-  },)
+  },[global.fullScreen])
   
   
   return(
@@ -32,10 +32,10 @@ const FullscreenBtn = () => {
         onClick={handleButtonClick}
       >
         <div className= 'fullscreen-icon'>
-          <div className={global.fullScreen?'on corner':'corner'}></div>
-          <div className={global.fullScreen?'on corner':'corner'}></div>
-          <div className={global.fullScreen?'on corner':'corner'}></div>
-          <div className={global.fullScreen?'on corner':'corner'}></div>
+          <div className={global.fullscreen?'on corner':'corner'}></div>
+          <div className={global.fullscreen?'on corner':'corner'}></div>
+          <div className={global.fullscreen?'on corner':'corner'}></div>
+          <div className={global.fullscreen?'on corner':'corner'}></div>
         </div>
       </button>      
     </div>

@@ -1,6 +1,7 @@
 .size-screen,
 .speed-screen{
   position: relative;
+  width: calc(40vw - .75rem + 4px);
   width: min(40vw - .75rem + 4px,500px - .75rem + 4px);
   height: 15vmin; 
 }
@@ -14,6 +15,7 @@
 .fill{
   position: absolute;
   top: .25rem;
+  width: calc(40vw - .75rem);
   width: min(40vw - .75rem ,500px - .75rem);
   height: calc(15vmin - .75rem); 
   border-radius: 200px;
@@ -71,6 +73,7 @@
     width: calc(15vmin - 0.5em); 
   }
   100% { 
+    width: calc(40vh - .75rem);
     width: min(40vw - .75rem , 500px - .75rem);
   }
 }

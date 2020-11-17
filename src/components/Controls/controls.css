@@ -6,7 +6,7 @@ section{
   height: 20vh;  
 }
 .left-controls,.right-controls{
-  width: 40vw; /*For Xiaomi´s Browser*/
+  width: 40vw; /*For some mobile browsers not supporting min() function*/
   width: min(40vw,500px);
   height: 15vmin;  
   padding: 0.25em;
@@ -78,6 +78,7 @@ section{
   transition: all 500ms ease-in-out;
 }
 .using>.label{
+  width: 40vw; /*For some mobile browsers not supporting min() function*/
   width: min(40vw,500px);
 }
 .size>.label,
