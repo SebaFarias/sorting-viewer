@@ -35,7 +35,7 @@ label{
   color: rgb(230, 230, 250);
   border: 1px solid #aaa;
   background-color: #252B3B;
-  background-image: url('../../../assets/arrow.svg') ,
+  background-image: url('../../assets/arrow.svg') ,
     radial-gradient(50% 50% at 50% 50%, #252B3B 0%, #3B4964 200%);
   background-position: right 0.5em top 50%, 0 0;
   background-repeat: no-repeat, repeat;

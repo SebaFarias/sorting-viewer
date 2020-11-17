@@ -4,11 +4,11 @@
   right: .5rem;
 }
 #speedBtn{
-  background: url('../../../assets/speed.svg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../../assets/speed.svg') no-repeat center 30%;
+  -webkit-background-size: 80%;
+  -moz-background-size: 80%;
+  -o-background-size: 80%;
+  background-size: 80%;
 }
 .speed-icon{
   background: linear-gradient(180deg, #82B53E 0%, #A9D154 100%);
