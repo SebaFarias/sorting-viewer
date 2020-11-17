@@ -3,37 +3,18 @@ import LanguageContext from '../../language'
 import {GlobalContext} from '../../globalContext'
 import './fullScreenBtn.css'
 
-const AlgoSelector = ({ selecting , tools }) => {
+const AlgoSelector = () => {
 
   const lang = useContext(LanguageContext)
-  const [ global , controller ] = useContext(GlobalContext)
-  const algoList = Object.keys(lang.algorithms)
+  const controller  = useContext(GlobalContext)[1]
 
   const handleButtonClick = () => {
-    tools.openAlgo()
-  }
-  const handleChange = event => {
-    controller.setAlgo(event.target.value)
-    tools.closeAlgo()
+    controller.toggleFullScreen()
   }
 
   return(
     <div className='control algo'>
       <label className='label' htmlFor='algoBtn'>{ lang.algo }</label>      
-      { selecting ?      
-      <select 
-        id='algoSelector' 
-        className='algo-select' 
-        value={global.algorithm} 
-        onChange={handleChange}
-        defaultValue=''
-      >
-        <option value='' hidden>{lang.algoSelectPlaceholder}</option>
-        {algoList.map( algoName =>{
-          return <option key={algoName} value={algoName}>{lang.algorithms[algoName]}</option>
-        })}
-      </select>      
-      :      
       <button 
         id='algoBtn' 
         className='algo btn' 
@@ -41,8 +22,7 @@ const AlgoSelector = ({ selecting , tools }) => {
         onClick={handleButtonClick}
       >
         <div className= 'algo-icon'></div>
-      </button>
-      }
+      </button>      
     </div>
   )
 }

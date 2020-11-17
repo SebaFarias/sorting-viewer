@@ -23,6 +23,7 @@ export const GlobalProvider = (props) => {
     algorithm: false,
     sorted: false,
     onTransition: false,
+    fullscreen: false,
   })
   const controller = {   
     pause: () => {
@@ -51,6 +52,32 @@ export const GlobalProvider = (props) => {
           run: !prevState.run,
           interval: newInterval,
         }  
+      })
+    },
+    toggleFullScreen: () => {
+      setState( prevState => {
+        if(prevState.fullscreen) {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+          }
+        }else{
+          var elem = document.documentElement;
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+          }
+        }
+        return{
+          ...prevState,
+          fullscreen: !prevState.fullscreen,
+        }
       })
     },
     setSpeed: newSpeed => {
