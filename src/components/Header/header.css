@@ -1,6 +1,6 @@
 header{
-  display: flex;
   height: 100%;
+  display: flex;
   flex-direction: column;
   margin-bottom: 5vh;
   padding: 1em var(--padding);
@@ -17,10 +17,49 @@ h1,h2{
   text-align: center;
 }
 h1{
-  font-size: calc(1.5vw + 26.37px);
+  font-size: calc(1.5vw + 26.37px); 
 }
-h2{
+label{
   font-size: calc(0.56vw + 15.89px);
   font-weight: 400;
-
+  margin: 0 auto;
 }
+.algo-select{
+  display: inline-block;
+  padding: .2rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  border-radius: 2.5rem;
+  color: rgb(230, 230, 250);
+  border: 1px solid #aaa;
+  background-color: #252B3B;
+  background-image: url('../../../assets/arrow.svg') ,
+    radial-gradient(50% 50% at 50% 50%, #252B3B 0%, #3B4964 200%);
+  background-position: right 0.5em top 50%, 0 0;
+  background-repeat: no-repeat, repeat;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+
+/* .algo-select::-ms-expand {
+  display: none;
+}
+.algo-select:hover {
+  border-color: #888;
+}
+.algo-select:focus {
+  border-color: #aaa;
+	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: rgb(240, 240, 255);
+	outline: none;
+}
+.algo-select option {
+  font-weight:400;
+} */

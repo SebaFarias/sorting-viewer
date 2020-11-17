@@ -8,7 +8,7 @@
 .fill,
 .range.size,
 .range.speed{
-  animation: 500ms expand; /* on algoBtn.css*/
+  animation: 500ms expand;
 }
 .background,
 .fill{
@@ -65,6 +65,14 @@
 .contract>.range{
   width: calc(15vmin - 0.5em); 
   transition: all 500ms;
+}
+@keyframes expand{
+  0% { 
+    width: calc(15vmin - 0.5em); 
+  }
+  100% { 
+    width: min(40vw - .75rem , 500px - .75rem);
+  }
 }
 /* .contract>.range.size{
   left: max(-40vw + .75rem ,-500px + .75rem);

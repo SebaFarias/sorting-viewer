@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import LanguageContext from '../../language'
 import {GlobalContext} from '../../globalContext'
-import './algoBtn.css'
+import './fullScreenBtn.css'
 
 const AlgoSelector = ({ selecting , tools }) => {
 
