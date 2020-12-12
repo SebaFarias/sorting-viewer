@@ -1,0 +1,16 @@
+.squares-container{
+  padding: 5vh var(--padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.squares{
+  display: grid;
+  gap: 1px 1px;
+}
+.square.new{
+  background: white;
+}
+.square.wall{
+  background: #27263F;
+}

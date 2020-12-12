@@ -7,9 +7,14 @@ const ENGLISH = {
     welcome: 'Welcome! Choose an Algorithm',
     algoSelectPlaceholder: 'Choose one',
     algorithms: {
-      selectionSort: 'Selection sort',
-      bubbleSort: 'Bubble sort',
-      insertionSort: 'Insertion sort',
+      sort: {
+        selectionSort: 'Selection sort',
+        bubbleSort: 'Bubble sort',
+        insertionSort: 'Insertion sort',
+      },
+      path: {
+        breadthFirstSearch: 'Breadth first search',
+      },
     },
     restart: 'restart',
     run:{
@@ -26,9 +31,14 @@ const ENGLISH = {
     welcome: 'Bienvenido! Escoje un Algoritmo',
     algoSelectPlaceholder: 'Escoge uno',
     algorithms: {
-      selectionSort: 'Orden por selección',
-      bubbleSort: 'Orden de burbuja',
-      insertionSort: 'Orden por inserción',
+      sort: {
+        selectionSort: 'Orden por selección',
+        bubbleSort: 'Orden de burbuja',
+        insertionSort: 'Orden por inserción',
+      },
+      path: {
+        breadthFirstSearch: 'Búsqueda por amplitud',
+      },
     },
     restart: 'reiniciar',
     run:{

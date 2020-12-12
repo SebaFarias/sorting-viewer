@@ -29,15 +29,15 @@
   align-self: flex-end;
   margin: 1px;
 }
-.new{
+.bar.new{
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgb(255, 255, 255) 20vh);
 }
-.inspecting{
+.bar.inspecting{
   background: linear-gradient(to top, rgba(235, 211, 61, 0), rgb(235, 211, 61) 20vh); 
 }
-.selected{
+.bar.selected{
   background: linear-gradient(to top, rgba(230, 89, 105, 0), rgb(230, 89, 105) 20vh); 
 }
-.sorted{
+.bar.sorted{
   background: linear-gradient(to top, rgba(169, 209, 84, 0), rgb(169, 209, 84) 20vh);
 }

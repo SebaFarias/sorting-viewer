@@ -1,4 +1,10 @@
 # ToDo
+
+Mozilla Dev = https://developer.mozilla.org/es/docs/Web/CSS/border-radius
+A* http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html
+https://www.redblobgames.com/pathfinding/a-star/introduction.html
+http://theory.stanford.edu/~amitp/GameProgramming/MapRepresentations.html
+
 [X] Controls
  - [X] Play
  - [X] More / Less bars

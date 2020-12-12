@@ -10,15 +10,15 @@ const Bars = () => {
   const lang = useContext(LangContext)
 
   const restart = () => {
-    if(global.sorted) controller.initialize(global.algorithm,global.size)
+    if(global.finished) controller.initialize(global.algorithm,global.size)
   }
 
   return(
     <main className="bars" onClick={restart}>
-      {!global.algorithm? <NoAlgoCard/> : global.bars.map( bar => {
+      {!global.algorithm? <NoAlgoCard/> : global.data.map( bar => {
         return <Bar key={bar.hash} situation={bar.state} height={bar.heigth}/>
       })}
-      {global.sorted? 
+      {global.finished? 
       <button 
         className='restartBtn' 
         onClick={restart}
