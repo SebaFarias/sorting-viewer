@@ -57,7 +57,7 @@ const Square = ({ id, situation , corner}) => {
   : corner === 1 ? {borderTopRightRadius: cornerRadius + 'px'}
   : corner === 2 ? {borderBottomRightRadius: cornerRadius + 'px'}
   : corner === 3 ? {borderBottomLeftRadius: cornerRadius + 'px'}
-  : {borderBottomLeftRadius: 0 + 'px'}  
+  : {}  
 
   return(
     <div className={`square ${situation}`} id={id} style={cornerStyle}>

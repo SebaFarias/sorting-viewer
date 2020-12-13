@@ -5,8 +5,8 @@ const Algorithms = {
     initial: size => {
       return [ generate( size ) , breadthFirstSearch.initial() ]
     },
-    setStart: ( array , [i,j] , indexes ) => {
-      return setStart( array , [i,j] , indexes )
+    setStart: ( array , pressed , indexes ) => {
+      return setStart( array , pressed , indexes )
     },
     removeStart: ( array , indexes ) => {
       return removeStart( array , indexes )

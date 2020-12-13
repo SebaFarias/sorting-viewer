@@ -75,13 +75,35 @@ const generateController = setState => {
       } else {
         const pressed = [e.target.id.split('-')[1],e.target.id.split('-')[2]]
         if(global.indexes.start){
-          if(global.indexes.start === pressed){
-            
+          if(global.indexes.start[0] == pressed[0] && global.indexes.start[1] == pressed[1]){
+            controller.removeStart()
           }
+        } else {
+          if(e.target.classList.contains('square')) controller.setStart(pressed)
         }
         
       }  
     },
+    removeStart: () => {
+      setState( prevState => {
+        const [ newGrid , newIndexes ] = Model[prevState.algorithm].removeStart(prevState.data,prevState.indexes)
+        return {
+          ...prevState,
+          data: newGrid,
+          indexes:  newIndexes,
+        }
+      })
+    },
+    setStart: pressed => {
+      setState( prevState => {
+        const [ newGrid , newIndexes ] = Model[prevState.algorithm].setStart(prevState.data,pressed,prevState.indexes)
+        return {
+          ...prevState,
+          data: newGrid,
+          indexes:  newIndexes,
+        }
+      })
+    }
   }
   return controller
 }

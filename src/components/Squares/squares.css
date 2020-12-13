@@ -8,9 +8,16 @@
   display: grid;
   gap: 1px 1px;
 }
+.square{
+  transition: all 200ms;
+}
 .square.new{
   background: white;
 }
 .square.wall{
   background: #27263F;
+}
+.square.start{
+  background: #00ad2b;
+  border-radius: 100px;
 }
