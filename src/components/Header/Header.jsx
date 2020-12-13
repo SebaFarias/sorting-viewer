@@ -22,22 +22,29 @@ const toggleMode = () => {
   return(
     <header>
       <LangToggler toggle={toggleLng} eng={eng}/>
-      <h1 onClick={toggleMode}>{lang.title}</h1>
-      <label htmlFor="">
-        {lang.subtitle}
+      <div 
+        onClick={toggleMode} 
+        className='title-container' 
+      >
+        <span className="mode-toggler">&#60; </span><h1>{lang.title}</h1><span className="mode-toggler"> &#62;</span>
+      </div>
+      <div style={{display: 'flex'}}>
+        <label htmlFor="">
+        {lang.subtitle} 
+        </label>
         <select 
           id='algoSelector' 
           className='algo-select' 
           value={global.algorithm} 
           onChange={handleChange}
           defaultValue=''
-        >
+          >
           <option value='' hidden>{lang.algoSelectPlaceholder}</option>
           {algoList.map( algoName =>{
             return <option key={algoName} value={algoName}>{lang.algorithms[global.mode][algoName]}</option>
           })}
         </select>
-      </label>
+      </div>
     </header>
   )
 }
