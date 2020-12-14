@@ -14,6 +14,26 @@ const generateController = setState => {
         }
       })
     },
+    toggleRunning: () => {
+      setState( prevState =>{
+        if(prevState.run){
+          clearInterval(prevState.interval)
+          return {
+            ...prevState,
+            run: !prevState.run,
+          }
+        }
+        clearInterval(prevState.interval)
+        const newInterval = setInterval( () => {
+          controller.stepForward()
+        },prevState.speed)
+        return{
+          ...prevState,
+          run: !prevState.run,
+          interval: newInterval,
+        }  
+      })
+    },
     setAlgo: newAlgo => {
       controller.initialize(newAlgo)
     },
@@ -41,7 +61,7 @@ const generateController = setState => {
         if(prevState.run){
           clearInterval(prevState.interval)
           const newInterval = setInterval( () => {
-            stepForward()
+            controller.stepForward()
           },newSpeed)
           return{
             ...prevState,
@@ -67,6 +87,25 @@ const generateController = setState => {
           steps: 0,
           initialArray: newArray,
         })
+      })
+    },
+    stepForward: () => {
+      setState( prevState => {
+        if( prevState.finished || !prevState.algorithm || !prevState.indexes.start || !prevState.indexes.destination ) return prevState 
+        const [ newGrid , newIndexes ] = Model[prevState.algorithm].step( prevState.data , prevState.indexes )
+        if( newIndexes ) return {
+          ...prevState,
+          data: newGrid,
+          indexes: newIndexes,
+          steps: prevState.steps + 1,
+        } 
+        clearInterval(prevState.interval)
+        return{
+          ...prevState,
+          steps: prevState.steps + 1,
+          run: false,
+          finished: true,
+        }
       })
     },
     handleClick: event => {
@@ -99,7 +138,7 @@ const restart = prevState => {
   const [ newGrid , newIndexes] = Model[prevState.algorithm].initial(prevState.size)
   return {
     ...prevState,
-    algorithm: algo,
+    algorithm: prevState.algorithm,
     data: newGrid,
     indexes: newIndexes,
     initialArray: newGrid,

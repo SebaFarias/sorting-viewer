@@ -17,8 +17,8 @@ const Algorithms = {
     removeDestination: ( array , indexes ) => {
       return removeDestination( array , indexes )
     },
-    step: ({}) => {
-      return breadthFirstSearch.step()
+    step: (grid,{start,destination,frontier,cameFrom,current,i,path}) => {
+      return breadthFirstSearch.step(grid,{start,destination,frontier,cameFrom,current,i,path})
     },
   },
 }
@@ -43,21 +43,25 @@ const setStart = ( array , [i,j] , indexes ) => {
   const newIndexes = {...indexes}
   if(newIndexes.destination[0] == i && newIndexes.destination[1] == j) newIndexes.destination = false
   newArray[i][j].state = 'start'
-  newIndexes.start = [i,j]
+  newIndexes.start = [parseInt(i),parseInt(j)]
+  newIndexes.frontier.push([parseInt(i),parseInt(j)])
+  newIndexes.cameFrom[`${i}-${j}`] = [null,null]
   return [ newArray , newIndexes ]
 }
 const removeStart = ( array, indexes ) => {
   const newArray = array
   const newIndexes = {...indexes}
   newArray[indexes.start[0]][indexes.start[1]].state = 'new'
+  delete newIndexes.cameFrom[`${indexes.start[0]}-${indexes.start[1]}`]
   newIndexes.start = false
+  newIndexes.frontier = []
   return [ newArray , newIndexes ]
 }
 const setDestination = ( array , [i,j] , indexes ) => {
   const newArray = array
   const newIndexes = {...indexes}
   newArray[i][j].state = 'destination'
-  newIndexes.destination = [i,j]
+  newIndexes.destination = [parseInt(i),parseInt(j)]
   return [ newArray , newIndexes ]
 }
 const removeDestination = ( array, indexes ) => {

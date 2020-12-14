@@ -12,12 +12,12 @@ const Squares = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const squareWidth = Math.min(( 0.83572 * window.innerWidth - 14.8)/ global.size ,window.innerHeight/(1.9*global.size), 40)
+      const squareWidth = Math.min(( 0.83572 * window.innerWidth - 14.8)/ global.size ,window.innerHeight/(1.7 * global.size), 40)
       setGridStyle({
         gridTemplateColumns: `repeat(${global.size}, ${squareWidth}px)`,
         gridTemplateRows: `repeat(${global.size}, ${squareWidth}px)`,
         border: '3px solid white',
-        borderRadius: '5px'
+        borderRadius: '8px'
       })
     }
     window.addEventListener("resize", handleResize);
@@ -34,17 +34,17 @@ const Squares = () => {
         global.data.map( (row,i) => {
           return row.map( (square,j) => {
             let corner = false
+            const max = global.size-1
             if( i===0 && j===0 ) corner = 0
-            if( i===0 && j=== global.size-1 ) corner = 1
-            if( i===global.size-1 && j=== global.size-1 ) corner = 2
-            if( i===global.size-1 && j===0 ) corner = 3
+            if( i===0 && j=== max ) corner = 1
+            if( i===max && j===0 ) corner = 2
+            if( i===max && j=== max ) corner = 3
             return <Square id={`square-${i}-${j}`} key={`${i}-${j}`} situation={square.state} corner={corner}/>
           })
         })}
         {global.finished? 
         <button 
         className='restartBtn' 
-        onClick={restart}
         >{lang.restart}</button>:''}
       </div>
     </main>
@@ -55,8 +55,8 @@ const Square = ({ id, situation , corner}) => {
   const cornerRadius = 8 
   const cornerStyle = corner === 0? {borderTopLeftRadius: cornerRadius + 'px'} 
   : corner === 1 ? {borderTopRightRadius: cornerRadius + 'px'}
-  : corner === 2 ? {borderBottomRightRadius: cornerRadius + 'px'}
-  : corner === 3 ? {borderBottomLeftRadius: cornerRadius + 'px'}
+  : corner === 2 ? {borderBottomLeftRadius: cornerRadius + 'px'}
+  : corner === 3 ? {borderBottomRightRadius: cornerRadius + 'px'}
   : {}  
 
   return(
