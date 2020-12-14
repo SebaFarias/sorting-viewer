@@ -12,7 +12,7 @@ const Squares = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const squareWidth = Math.min(( 0.83572 * window.innerWidth - 14.8)/ global.size , 40)
+      const squareWidth = Math.min(( 0.83572 * window.innerWidth - 14.8)/ global.size ,window.innerHeight/(1.9*global.size), 40)
       setGridStyle({
         gridTemplateColumns: `repeat(${global.size}, ${squareWidth}px)`,
         gridTemplateRows: `repeat(${global.size}, ${squareWidth}px)`,

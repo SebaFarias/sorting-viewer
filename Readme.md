@@ -31,7 +31,11 @@ http://theory.stanford.edu/~amitp/GameProgramming/MapRepresentations.html
 - [ ] Timsort
 - [ ] Introsort
 
-
+## Path Finding Algoritms
+   ### Breath First Algorithm 
+       [ ] Implement a queue for Frontier https://medium.com/laboratoria-developers/queues-in-javascript-2602677c9c3b
+       [ ] Implement came-from object
+       [ ] Implement a getNeighborns function
 # Buttons
 https://codepen.io/wallas/pen/lFABr
 https://codepen.io/codeandcam/pen/AmtvB
