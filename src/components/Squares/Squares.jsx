@@ -26,7 +26,7 @@ const Squares = () => {
   }, [global.size]); 
 
   return(
-    <main className="squares-container" onClick={ e =>{controller.handleClick( e , global )}}>
+    <main className="squares-container" onClick={controller.handleClick}>
       <div className="squares" style={global.algorithm? gridStyle: {}}>
         {!global.algorithm? 
         <NoAlgoCard/> 
